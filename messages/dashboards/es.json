@@ -1,0 +1,250 @@
+{
+  "DashboardCommon": {
+    "signedInAs": "Conectado como",
+    "signOut": "Cerrar sesión",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "roleLabels": {
+      "patient": "Paciente",
+      "provider": "Proveedor",
+      "hospital": "Hospital",
+      "admin": "Administrador"
+    }
+  },
+  "AdminDashboard": {
+    "nav": {
+      "overview": "Resumen",
+      "hospitals": "Hospitales",
+      "mellowMembers": "Miembros Mellow",
+      "userManagement": "Gestión de usuarios",
+      "applications": "Solicitudes",
+      "dataMonitoring": "Monitoreo de datos",
+      "clinicalTrials": "Ensayos clínicos",
+      "network": "Red",
+      "revenue": "Ingresos",
+      "cms": "CMS",
+      "auditLog": "Registro de auditoría"
+    },
+    "stats": {
+      "projectedMrr": "MRR proyectado",
+      "totalUsers": "Usuarios totales",
+      "hospitals": "Hospitales",
+      "highRiskAlerts": "Alertas de alto riesgo",
+      "labReportUploads": "Cargas de informes de laboratorio"
+    }
+  },
+  "HospitalDashboard": {
+    "nav": {
+      "dashboard": "Panel del hospital",
+      "manageProviders": "Gestionar proveedores",
+      "allPatients": "Todos los pacientes",
+      "clinicalVisits": "Visitas clínicas",
+      "diagnoses": "Diagnósticos",
+      "labReports": "Informes de laboratorio",
+      "schedule": "Horario",
+      "analytics": "Analítica",
+      "settings": "Configuración"
+    }
+  },
+  "ProviderDashboard": {
+    "nav": {
+      "dashboard": "Panel",
+      "patients": "Pacientes",
+      "labReports": "Informes de laboratorio",
+      "requests": "Solicitudes",
+      "messages": "Mensajes",
+      "documents": "Documentos",
+      "meeting": "Reunión",
+      "profile": "Perfil"
+    }
+  },
+  "PatientDashboard": {
+    "nav": {
+      "dashboard": "Panel",
+      "healthTrends": "Tendencias de salud",
+      "medicalRecords": "Historial médico",
+      "clinicalVisits": "Visitas clínicas",
+      "diagnoses": "Diagnósticos",
+      "documents": "Documentos",
+      "nearbyServices": "Servicios cercanos",
+      "recommendations": "Recomendaciones",
+      "carePlan": "Plan de cuidados",
+      "myProviders": "Mis proveedores",
+      "messages": "Mensajes",
+      "account": "Cuenta"
+    },
+    "pages": {
+      "home": {
+        "roleFallback": "Paciente",
+        "welcomeFallback": "Bienvenido/a",
+        "sampleTag": "Muestra",
+        "stats": {
+          "biologicalAge": "Edad biológica",
+          "chronologicalAge": "Edad cronológica",
+          "riskLevel": "Nivel de riesgo",
+          "riskVeryLow": "Muy bajo",
+          "messages": "Mensajes"
+        },
+        "yrs": "años",
+        "bioAgeCard": {
+          "heading": "Edad biológica",
+          "bioAgeLabel": "edad biológica",
+          "chronological": "Cronológica: {age} · ",
+          "youngerBy": "{years} años más joven"
+        },
+        "domainsCard": {
+          "heading": "Dominios de salud",
+          "cardiovascular": "Cardiovascular",
+          "metabolic": "Metabólico",
+          "mentalWellness": "Bienestar mental",
+          "physicalFitness": "Condición física",
+          "nutrition": "Nutrición"
+        },
+        "systemAges": {
+          "heading": "Edades de los sistemas",
+          "description": "Derivadas de biomarcadores en relación con la edad cronológica, utilizando asociaciones de riesgo publicadas. Una estimación de bienestar, no una prueba de laboratorio independiente.",
+          "cardiovascularAge": "Edad cardiovascular",
+          "metabolicAge": "Edad metabólica",
+          "inflammationAge": "Edad de inflamación"
+        },
+        "careTeam": {
+          "heading": "Tu equipo de atención",
+          "body": "Conéctate con un proveedor para obtener orientación personalizada.",
+          "cta": "Buscar un proveedor"
+        }
+      },
+      "account": {
+        "title": "Cuenta",
+        "profile": {
+          "heading": "Perfil",
+          "name": "Nombre",
+          "email": "Correo electrónico",
+          "accountType": "Tipo de cuenta",
+          "memberSince": "Miembro desde",
+          "notSet": "",
+          "patientFallback": "Paciente"
+        },
+        "password": {
+          "heading": "Contraseña"
+        },
+        "applications": {
+          "heading": "Tus solicitudes",
+          "submitted": "Enviada el {date}",
+          "empty": "Aún no hay solicitudes.",
+          "cta": "Solicita participar"
+        },
+        "status": {
+          "new": "Enviada",
+          "in_review": "En revisión",
+          "accepted": "Aceptada",
+          "rejected": "No aceptada"
+        }
+      },
+      "carePlan": {
+        "title": "Plan de cuidado",
+        "subtitle": "Orientación sobre dieta, ejercicio y estilo de vida de tus proveedores conectados.",
+        "loadError": "No se pudo cargar tu plan de cuidado. Asegúrate de que {file} se haya ejecutado.",
+        "providerFallback": "Tu proveedor",
+        "updated": "Actualizado el {date}",
+        "empty": "Aún no hay plan de cuidado de este proveedor.",
+        "noConnections": "Aún no hay planes de cuidado. Conéctate con un proveedor para empezar.",
+        "fields": {
+          "diet_plan": "Plan de alimentación",
+          "exercise_protocol": "Protocolo de ejercicio",
+          "yoga": "Yoga",
+          "meditation": "Meditación",
+          "medications": "Medicamentos y suplementos",
+          "cautions": "Precauciones",
+          "clinical_note": "Nota clínica"
+        }
+      },
+      "diagnoses": {
+        "title": "Diagnósticos",
+        "subtitle": "Diagnósticos registrados por tus proveedores durante las visitas clínicas.",
+        "loadError": "No se pudieron cargar tus diagnósticos. Asegúrate de que {file} se haya ejecutado.",
+        "empty": "Aún no hay diagnósticos registrados."
+      },
+      "documents": {
+        "title": "Documentos",
+        "subtitle": "Consulta y sube documentos vinculados a tu perfil. Cada documento se comparte con el proveedor específico que elijas al subirlo, no automáticamente con todos los proveedores a los que estás conectado.",
+        "loadError": "No se pudieron cargar tus documentos. Asegúrate de que {file1} y {file2} se hayan ejecutado (incluido el bucket de almacenamiento).",
+        "panelTitle": "Mis documentos",
+        "providerFallback": "Proveedor"
+      },
+      "healthTrends": {
+        "title": "Tendencias de salud",
+        "sampleTag": "Muestra",
+        "subtitle": "Tendencias de biomarcadores en tus últimos 6 informes de laboratorio. Aún no hay datos de laboratorio reales conectados. Esta es una vista previa de cómo se verá una vez conectados.",
+        "biologicalAge": "Edad biológica",
+        "glucose": "Glucosa",
+        "hsCrp": "hs-CRP"
+      },
+      "medicalRecords": {
+        "title": "Historial médico",
+        "subtitle": "Un resumen de tu historial de atención: visitas, proveedores y documentos registrados.",
+        "visits": "Visitas",
+        "providers": "Proveedores",
+        "documents": "Documentos",
+        "recentVisits": "Visitas recientes",
+        "viewAll": "Ver todo",
+        "noVisits": "Aún no hay visitas registradas.",
+        "careTeamOnFile": "Equipo de atención registrado",
+        "noProviders": "Aún no hay proveedores conectados."
+      },
+      "messages": {
+        "title": "Mensajes",
+        "subtitle": "Conversaciones con tus proveedores conectados.",
+        "loadError": "No se pudieron cargar tus conversaciones.",
+        "providerFallback": "Proveedor",
+        "newMessages": "Mensajes nuevos",
+        "open": "Abrir",
+        "empty": "Aún no hay conversaciones. Conéctate primero con un proveedor desde",
+        "findProviderLink": "Buscar un proveedor"
+      },
+      "messageThread": {
+        "backToAll": "Todas las conversaciones",
+        "providerFallback": "Proveedor"
+      },
+      "nearbyServices": {
+        "title": "Servicios cercanos",
+        "subtitle": "Encuentra clínicas, nutricionistas, centros de yoga y más cerca de ti.",
+        "locationFound": "Ubicación encontrada ({lat}, {lng})",
+        "categories": {
+          "clinics": "Clínicas",
+          "dietitians": "Nutricionistas",
+          "yoga": "Yoga",
+          "meditation": "Meditación",
+          "gym": "Gimnasio",
+          "pharmacy": "Farmacia"
+        },
+        "notConnected": "Aún no conectado",
+        "shareLocationHeading": "Comparte tu ubicación para empezar",
+        "shareLocationBody": "Haz clic en \"Usar mi ubicación\" arriba para encontrar {category} cerca de ti en el mapa.",
+        "mapsNotConfigured": "Maps aún no está configurado. Configura {envVar} en tu entorno.",
+        "near": "cerca de ti",
+        "liveResults": "Resultados en vivo de Google Maps. Haz clic en cualquier marcador para ver detalles, reseñas e indicaciones.",
+        "openInGoogleMaps": "Abrir en Google Maps"
+      },
+      "providers": {
+        "title": "Buscar un proveedor",
+        "subtitle": "Busca, filtra y solicita una conexión.",
+        "loadError": "No se pudieron cargar los proveedores. Asegúrate de que {file} se haya ejecutado.",
+        "empty": "Aún no hay proveedores disponibles para conectar.",
+        "unknownHospital": "Hospital desconocido"
+      },
+      "recommendations": {
+        "title": "Recomendaciones",
+        "subtitle": "Notas y orientación dejadas por tus proveedores.",
+        "loadError": "No se pudieron cargar tus recomendaciones. Asegúrate de que {file} se haya ejecutado.",
+        "providerFallback": "Tu proveedor",
+        "empty": "Aún no hay recomendaciones."
+      },
+      "visits": {
+        "title": "Visitas y diagnósticos",
+        "subtitle": "Un registro histórico de tus visitas, según lo registrado por tus proveedores.",
+        "loadError": "No se pudo cargar tu historial de visitas. Asegúrate de que {file} se haya ejecutado.",
+        "empty": "Aún no hay visitas registradas."
+      }
+    }
+  }
+}

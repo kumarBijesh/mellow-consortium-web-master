@@ -1,0 +1,250 @@
+{
+  "DashboardCommon": {
+    "signedInAs": "تم تسجيل الدخول باسم",
+    "signOut": "تسجيل الخروج",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "roleLabels": {
+      "patient": "مريض",
+      "provider": "مزوّد",
+      "hospital": "مستشفى",
+      "admin": "مسؤول"
+    }
+  },
+  "AdminDashboard": {
+    "nav": {
+      "overview": "نظرة عامة",
+      "hospitals": "المستشفيات",
+      "mellowMembers": "أعضاء Mellow",
+      "userManagement": "إدارة المستخدمين",
+      "applications": "الطلبات",
+      "dataMonitoring": "مراقبة البيانات",
+      "clinicalTrials": "التجارب السريرية",
+      "network": "الشبكة",
+      "revenue": "الإيرادات",
+      "cms": "نظام إدارة المحتوى",
+      "auditLog": "سجل التدقيق"
+    },
+    "stats": {
+      "projectedMrr": "الإيرادات الشهرية المتوقعة",
+      "totalUsers": "إجمالي المستخدمين",
+      "hospitals": "المستشفيات",
+      "highRiskAlerts": "تنبيهات عالية الخطورة",
+      "labReportUploads": "تحميلات تقارير المختبر"
+    }
+  },
+  "HospitalDashboard": {
+    "nav": {
+      "dashboard": "لوحة تحكم المستشفى",
+      "manageProviders": "إدارة مقدمي الرعاية",
+      "allPatients": "جميع المرضى",
+      "clinicalVisits": "الزيارات السريرية",
+      "diagnoses": "التشخيصات",
+      "labReports": "تقارير المختبر",
+      "schedule": "الجدول",
+      "analytics": "التحليلات",
+      "settings": "الإعدادات"
+    }
+  },
+  "ProviderDashboard": {
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "patients": "المرضى",
+      "labReports": "تقارير المختبر",
+      "requests": "الطلبات",
+      "messages": "الرسائل",
+      "documents": "المستندات",
+      "meeting": "الاجتماع",
+      "profile": "الملف الشخصي"
+    }
+  },
+  "PatientDashboard": {
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "healthTrends": "اتجاهات الصحة",
+      "medicalRecords": "السجلات الطبية",
+      "clinicalVisits": "الزيارات السريرية",
+      "diagnoses": "التشخيصات",
+      "documents": "المستندات",
+      "nearbyServices": "الخدمات القريبة",
+      "recommendations": "التوصيات",
+      "carePlan": "خطة الرعاية",
+      "myProviders": "مقدمو رعايتي",
+      "messages": "الرسائل",
+      "account": "الحساب"
+    },
+    "pages": {
+      "home": {
+        "roleFallback": "مريض",
+        "welcomeFallback": "مرحبًا",
+        "sampleTag": "عينة",
+        "stats": {
+          "biologicalAge": "العمر البيولوجي",
+          "chronologicalAge": "العمر الزمني",
+          "riskLevel": "مستوى الخطر",
+          "riskVeryLow": "منخفض جدًا",
+          "messages": "الرسائل"
+        },
+        "yrs": "سنة",
+        "bioAgeCard": {
+          "heading": "العمر البيولوجي",
+          "bioAgeLabel": "العمر البيولوجي",
+          "chronological": "العمر الزمني: {age} · ",
+          "youngerBy": "أصغر بـ {years} سنوات"
+        },
+        "domainsCard": {
+          "heading": "المجالات الصحية",
+          "cardiovascular": "القلب والأوعية",
+          "metabolic": "الأيض",
+          "mentalWellness": "الصحة النفسية",
+          "physicalFitness": "اللياقة البدنية",
+          "nutrition": "التغذية"
+        },
+        "systemAges": {
+          "heading": "أعمار الأنظمة",
+          "description": "مشتقة من المؤشرات الحيوية بالنسبة للعمر الزمني، باستخدام ارتباطات الخطر المنشورة. تقدير للعافية، وليس فحصًا مخبريًا منفصلاً.",
+          "cardiovascularAge": "عمر القلب والأوعية",
+          "metabolicAge": "عمر الأيض",
+          "inflammationAge": "عمر الالتهاب"
+        },
+        "careTeam": {
+          "heading": "فريق رعايتك",
+          "body": "تواصل مع مقدم رعاية للحصول على إرشادات شخصية.",
+          "cta": "ابحث عن مقدم رعاية"
+        }
+      },
+      "account": {
+        "title": "الحساب",
+        "profile": {
+          "heading": "الملف الشخصي",
+          "name": "الاسم",
+          "email": "البريد الإلكتروني",
+          "accountType": "نوع الحساب",
+          "memberSince": "عضو منذ",
+          "notSet": "",
+          "patientFallback": "مريض"
+        },
+        "password": {
+          "heading": "كلمة المرور"
+        },
+        "applications": {
+          "heading": "طلباتك",
+          "submitted": "تم الإرسال في {date}",
+          "empty": "لا توجد طلبات بعد.",
+          "cta": "تقدم للمشاركة"
+        },
+        "status": {
+          "new": "تم الإرسال",
+          "in_review": "قيد المراجعة",
+          "accepted": "مقبول",
+          "rejected": "غير مقبول"
+        }
+      },
+      "carePlan": {
+        "title": "خطة الرعاية",
+        "subtitle": "إرشادات النظام الغذائي والتمارين ونمط الحياة من مقدمي الرعاية المتصلين بك.",
+        "loadError": "تعذر تحميل خطة رعايتك. تأكد من تشغيل {file}.",
+        "providerFallback": "مقدم رعايتك",
+        "updated": "تم التحديث في {date}",
+        "empty": "لا توجد خطة رعاية من هذا المقدم بعد.",
+        "noConnections": "لا توجد خطط رعاية بعد. تواصل مع مقدم رعاية للبدء.",
+        "fields": {
+          "diet_plan": "خطة النظام الغذائي",
+          "exercise_protocol": "بروتوكول التمارين",
+          "yoga": "اليوغا",
+          "meditation": "التأمل",
+          "medications": "الأدوية والمكملات",
+          "cautions": "تحذيرات",
+          "clinical_note": "ملاحظة سريرية"
+        }
+      },
+      "diagnoses": {
+        "title": "التشخيصات",
+        "subtitle": "التشخيصات المسجلة من قبل مقدمي رعايتك أثناء الزيارات السريرية.",
+        "loadError": "تعذر تحميل تشخيصاتك. تأكد من تشغيل {file}.",
+        "empty": "لم يتم تسجيل أي تشخيصات بعد."
+      },
+      "documents": {
+        "title": "المستندات",
+        "subtitle": "عرض وتحميل المستندات المرتبطة بملفك الشخصي. تتم مشاركة كل مستند فقط مع مقدم الرعاية المحدد الذي تختاره عند تحميله، وليس تلقائيًا مع كل مقدم رعاية متصل بك.",
+        "loadError": "تعذر تحميل مستنداتك. تأكد من تشغيل {file1} و{file2} كليهما (بما في ذلك حاوية التخزين).",
+        "panelTitle": "مستنداتي",
+        "providerFallback": "مقدم الرعاية"
+      },
+      "healthTrends": {
+        "title": "اتجاهات الصحة",
+        "sampleTag": "عينة",
+        "subtitle": "اتجاهات المؤشرات الحيوية عبر آخر 6 تقارير مخبرية. لا توجد بيانات مخبرية حقيقية متصلة بعد. هذه معاينة لما ستبدو عليه بمجرد الاتصال.",
+        "biologicalAge": "العمر البيولوجي",
+        "glucose": "الجلوكوز",
+        "hsCrp": "hs-CRP"
+      },
+      "medicalRecords": {
+        "title": "السجلات الطبية",
+        "subtitle": "ملخص لتاريخ رعايتك: الزيارات ومقدمو الرعاية والمستندات المسجلة.",
+        "visits": "الزيارات",
+        "providers": "مقدمو الرعاية",
+        "documents": "المستندات",
+        "recentVisits": "الزيارات الأخيرة",
+        "viewAll": "عرض الكل",
+        "noVisits": "لم يتم تسجيل أي زيارات بعد.",
+        "careTeamOnFile": "فريق الرعاية المسجل",
+        "noProviders": "لا يوجد مقدمو رعاية متصلون بعد."
+      },
+      "messages": {
+        "title": "الرسائل",
+        "subtitle": "المحادثات مع مقدمي الرعاية المتصلين بك.",
+        "loadError": "تعذر تحميل محادثاتك.",
+        "providerFallback": "مقدم الرعاية",
+        "newMessages": "رسائل جديدة",
+        "open": "فتح",
+        "empty": "لا توجد محادثات بعد. تواصل أولاً مع مقدم رعاية من",
+        "findProviderLink": "البحث عن مقدم رعاية"
+      },
+      "messageThread": {
+        "backToAll": "كل المحادثات",
+        "providerFallback": "مقدم الرعاية"
+      },
+      "nearbyServices": {
+        "title": "الخدمات القريبة",
+        "subtitle": "ابحث عن العيادات وأخصائيي التغذية ومراكز اليوغا والمزيد بالقرب منك.",
+        "locationFound": "تم العثور على الموقع ({lat}, {lng})",
+        "categories": {
+          "clinics": "العيادات",
+          "dietitians": "أخصائيو التغذية",
+          "yoga": "اليوغا",
+          "meditation": "التأمل",
+          "gym": "صالة رياضية",
+          "pharmacy": "صيدلية"
+        },
+        "notConnected": "غير متصل بعد",
+        "shareLocationHeading": "شارك موقعك للبدء",
+        "shareLocationBody": "انقر على \"استخدام موقعي\" أعلاه للعثور على {category} بالقرب منك على الخريطة.",
+        "mapsNotConfigured": "لم يتم تكوين الخرائط بعد. قم بتعيين {envVar} في بيئتك.",
+        "near": "بالقرب منك",
+        "liveResults": "نتائج خرائط Google المباشرة. انقر على أي دبوس للحصول على التفاصيل والتقييمات والاتجاهات.",
+        "openInGoogleMaps": "افتح في خرائط Google"
+      },
+      "providers": {
+        "title": "ابحث عن مقدم رعاية",
+        "subtitle": "ابحث وصفِّ واطلب اتصالاً.",
+        "loadError": "تعذر تحميل مقدمي الرعاية. تأكد من تشغيل {file}.",
+        "empty": "لا يوجد مقدمو رعاية متاحون للتواصل معهم بعد.",
+        "unknownHospital": "مستشفى غير معروف"
+      },
+      "recommendations": {
+        "title": "التوصيات",
+        "subtitle": "ملاحظات وإرشادات تركها مقدمو رعايتك.",
+        "loadError": "تعذر تحميل توصياتك. تأكد من تشغيل {file}.",
+        "providerFallback": "مقدم رعايتك",
+        "empty": "لا توجد توصيات بعد."
+      },
+      "visits": {
+        "title": "الزيارات والتشخيصات",
+        "subtitle": "سجل تاريخي لزياراتك، كما سجله مقدمو رعايتك.",
+        "loadError": "تعذر تحميل سجل زياراتك. تأكد من تشغيل {file}.",
+        "empty": "لم يتم تسجيل أي زيارات بعد."
+      }
+    }
+  }
+}

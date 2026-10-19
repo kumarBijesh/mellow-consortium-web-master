@@ -1,0 +1,409 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------
+ * Axiforma — brand v2 heading font (homepage/header/footer redesign).
+ * Not a Google Font; these files aren't in the repo yet. Drop the
+ * licensed weights at the paths below and they load automatically —
+ * no other code needs to change. Until then, `font-brand` (Tailwind
+ * fontFamily.brand) falls back to Sora.
+ * ------------------------------------------------------------ */
+@font-face {
+  font-family: "Axiforma";
+  src: url("/fonts/axiforma/Axiforma-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("/fonts/axiforma/Axiforma-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Axiforma";
+  src: url("/fonts/axiforma/Axiforma-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink font-body antialiased dark:bg-darkbg dark:text-white transition-colors;
+    line-height: 1.55;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+  :focus-visible {
+    outline: 2px solid #006EB6;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply max-w-wrap mx-auto px-7;
+  }
+  .eyebrow {
+    @apply text-[12px] font-bold tracking-[0.16em] uppercase text-teal inline-flex items-center gap-2.5;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    @apply bg-gold inline-block;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 justify-center font-display font-semibold text-[14.5px] px-[24px] py-[13px] rounded-full cursor-pointer border border-transparent transition-all duration-300 ease-out whitespace-nowrap hover:scale-[1.035] active:scale-[0.96];
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-blue to-teal text-white shadow-[0_8px_20px_-9px_rgba(0,110,182,.55)] hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-10px_rgba(21,168,160,.6)];
+  }
+  .btn-secondary {
+    @apply btn bg-white text-navy border-line shadow-sm hover:-translate-y-0.5 hover:shadow-card-sm hover:border-blue/30 dark:bg-white/[0.06] dark:text-white dark:border-white/15 dark:hover:border-white/30 dark:hover:bg-white/10;
+  }
+  /* Small pill action buttons for table rows (Edit/View/Remove-style) —
+     used across all four dashboards in place of bare text links. */
+  .btn-chip {
+    @apply inline-flex items-center gap-1.5 text-[12.5px] font-semibold px-3.5 py-[7px] rounded-full border border-line text-navy transition-all duration-200 cursor-pointer whitespace-nowrap hover:border-blue/40 hover:bg-lightblue/60 hover:-translate-y-0.5 dark:border-white/15 dark:text-white dark:hover:border-white/30 dark:hover:bg-white/10;
+  }
+  .btn-chip-primary {
+    @apply btn-chip bg-gradient-to-r from-blue to-teal text-white border-transparent shadow-[0_4px_12px_-4px_rgba(21,168,160,.5)] hover:brightness-110 hover:border-transparent;
+  }
+  .btn-chip-danger {
+    @apply inline-flex items-center gap-1.5 text-[12.5px] font-semibold px-3.5 py-[7px] rounded-full border border-red-200 text-red-600 transition-all duration-200 cursor-pointer whitespace-nowrap hover:bg-red-50 hover:border-red-300 hover:-translate-y-0.5 dark:border-red-500/25 dark:text-red-400 dark:hover:bg-red-500/10;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-navy focus:text-white focus:px-4 focus:py-2.5 focus:rounded-[10px] focus:text-[14px] focus:font-semibold;
+  }
+
+  /* ------------------------------------------------------------
+   * Colorful nav-icon chips — shared across all 4 dashboard sidebars
+   * (admin/hospital/provider/patient). Each nav item's icon sits in a
+   * small tinted chip instead of a flat white/35 icon, cycling through
+   * the brand + division palette (picked deterministically per label by
+   * each NavLink component) so a sidebar full of identical navy rows
+   * reads as distinct and colorful at a glance, not monochrome.
+   * ------------------------------------------------------------ */
+  .nav-chip {
+    @apply w-7 h-7 rounded-[8px] flex items-center justify-center flex-none transition-colors duration-200;
+  }
+  .nav-chip-active {
+    @apply bg-white/20 text-white;
+  }
+  .nav-chip-blue {
+    @apply bg-blue/20 text-[#6FC6FF];
+  }
+  .nav-chip-teal {
+    @apply bg-teal/20 text-[#5CE6DA];
+  }
+  .nav-chip-purple {
+    @apply bg-[#6B4EC7]/25 text-[#BBA4FF];
+  }
+  .nav-chip-gold {
+    @apply bg-gold/20 text-[#F2CD6B];
+  }
+  .nav-chip-coral {
+    @apply bg-[#E8735A]/20 text-[#FF9A82];
+  }
+
+  /* Colorful stat-tile accents — same 5-color rotation, used on stat
+     cards on each dashboard's landing page (top border + tinted icon
+     chip) so the plain white/navy number grids get real color instead
+     of relying on borders alone. */
+  /* !-prefixed: these cards also carry a plain `border border-line
+     dark:border-white/10` utility for the other 3 sides, which sets the
+     full border-color shorthand (incl. border-top-color). Since Tailwind's
+     utilities layer loads after this components layer, that shorthand
+     would silently win the cascade and hide the top accent without
+     !important here — same override pattern already used elsewhere in
+     this file (e.g. !px-4 !py-2.5 on shared button classes). */
+  .stat-accent-blue {
+    @apply border-t-2 !border-t-blue;
+  }
+  .stat-accent-teal {
+    @apply border-t-2 !border-t-teal;
+  }
+  .stat-accent-purple {
+    @apply border-t-2 !border-t-[#6B4EC7];
+  }
+  .stat-accent-gold {
+    @apply border-t-2 !border-t-gold;
+  }
+  .stat-accent-coral {
+    @apply border-t-2 !border-t-[#E8735A];
+  }
+  .stat-chip-blue {
+    @apply bg-blue/10 text-blue dark:bg-blue/[0.18] dark:text-[#6FC6FF];
+  }
+  .stat-chip-teal {
+    @apply bg-teal/10 text-teal dark:bg-teal/[0.18] dark:text-[#5CE6DA];
+  }
+  .stat-chip-purple {
+    @apply bg-[#6B4EC7]/10 text-[#6B4EC7] dark:bg-[#6B4EC7]/[0.22] dark:text-[#BBA4FF];
+  }
+  .stat-chip-gold {
+    @apply bg-gold/10 text-[#8a6a12] dark:bg-gold/[0.18] dark:text-[#F2CD6B];
+  }
+  .stat-chip-coral {
+    @apply bg-[#E8735A]/10 text-[#E8735A] dark:bg-[#E8735A]/[0.18] dark:text-[#FF9A82];
+  }
+
+  /* ------------------------------------------------------------
+   * Admin dashboard — dark shell by default in dark mode, light
+   * shell in light mode. MELLOW brand colors (navy/blue/teal/gold)
+   * stay constant; only the surfaces flip.
+   * ------------------------------------------------------------ */
+  .adm-shell {
+    @apply min-h-screen bg-[#f5f7fa] text-ink font-body dark:bg-[#0a0e13] dark:text-white transition-colors;
+  }
+  .adm-card {
+    @apply rounded-2xl border border-line bg-white dark:border-white/[0.08] dark:bg-white/[0.03];
+  }
+  .adm-input {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-[14px] text-ink placeholder-muted focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent transition dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder-white/25;
+  }
+  .adm-label {
+    @apply block text-[13px] font-semibold text-muted mb-1.5 dark:text-white/70;
+  }
+  .adm-btn-primary {
+    @apply inline-flex items-center gap-2 justify-center font-display font-semibold text-[14px] px-5 py-3 rounded-full bg-gradient-to-r from-blue to-teal text-white shadow-[0_8px_20px_-9px_rgba(21,168,160,.55)] transition-all duration-300 hover:shadow-[0_14px_30px_-8px_rgba(21,168,160,.65)] hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:shadow-none;
+  }
+  .adm-btn-ghost {
+    @apply inline-flex items-center gap-2 justify-center font-semibold text-[13.5px] px-4 py-2.5 rounded-full border border-line text-muted transition-all duration-200 hover:text-navy hover:border-navy/30 hover:bg-lightblue/50 hover:-translate-y-0.5 dark:border-white/10 dark:text-white/60 dark:hover:text-white dark:hover:border-white/25 dark:hover:bg-white/[0.06];
+  }
+  .adm-pill {
+    @apply text-[13px] font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 whitespace-nowrap capitalize;
+  }
+  .adm-pill-active {
+    @apply bg-gradient-to-r from-blue to-teal text-white border-transparent shadow-[0_4px_14px_-5px_rgba(21,168,160,.55)];
+  }
+  .adm-pill-inactive {
+    @apply bg-lightblue/40 text-muted border-line hover:border-navy/25 hover:text-navy dark:bg-white/[0.03] dark:text-white/55 dark:border-white/10 dark:hover:border-white/25 dark:hover:text-white;
+  }
+
+  /* ------------------------------------------------------------
+   * Drifting glow orbs for dark hero/section backgrounds — pure CSS
+   * (GPU-friendly transform/opacity only) so it doesn't need JS and
+   * still runs during static prerendering.
+   * ------------------------------------------------------------ */
+  .orb {
+    @apply absolute rounded-full pointer-events-none blur-[90px];
+    animation: orb-drift 18s ease-in-out infinite;
+  }
+  .orb-delay {
+    animation-delay: -6s;
+  }
+
+  /* ------------------------------------------------------------
+   * MELLOW brand v2 — homepage/header/footer redesign only. Dashboards
+   * keep .btn/.btn-primary/.adm-* untouched. Caribbean Green/Mountain
+   * Meadow are very light, so buttons on them use Rich Black text
+   * (10:1+ contrast) rather than white (1.6:1, fails).
+   * ------------------------------------------------------------ */
+  .mkt-btn {
+    @apply inline-flex items-center gap-2 justify-center font-brand font-semibold text-[14.5px] px-[26px] py-[14px] rounded-full cursor-pointer border border-transparent transition-all duration-300 ease-out whitespace-nowrap hover:scale-[1.035] active:scale-[0.96];
+  }
+  .mkt-btn-primary {
+    @apply mkt-btn bg-gradient-to-r from-meadow to-caribbean text-richblack shadow-[0_8px_22px_-9px_rgba(44,194,149,.6)] hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-10px_rgba(0,223,129,.55)];
+  }
+  .mkt-btn-secondary {
+    @apply mkt-btn bg-transparent text-flashwhite border-flashwhite/30 hover:border-flashwhite hover:bg-flashwhite/[.08];
+  }
+  .mkt-btn-secondary-light {
+    @apply mkt-btn bg-white text-bangladesh border-line shadow-sm hover:-translate-y-0.5 hover:shadow-card-green-sm hover:border-bangladesh/30;
+  }
+  .mkt-eyebrow {
+    @apply text-[12px] font-bold tracking-[0.16em] uppercase text-meadow inline-flex items-center gap-2.5 font-brand;
+  }
+  .mkt-eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    @apply bg-caribbean inline-block;
+  }
+  /* Same eyebrow treatment, but for sections that still respect the
+     light/dark toggle (Trials/Founders/News) rather than the fixed-dark
+     brand bands (hero/network/why/final CTA). */
+  .mkt-eyebrow-2 {
+    @apply text-[12px] font-bold tracking-[0.16em] uppercase text-forest dark:text-meadow inline-flex items-center gap-2.5 font-brand;
+  }
+  .mkt-eyebrow-2::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    @apply bg-caribbean inline-block;
+  }
+  .mkt-card-dark {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-300;
+  }
+  .mkt-card-light {
+    @apply rounded-2xl border border-line bg-white shadow-card-green-sm transition-all duration-300;
+  }
+
+  /* Diagonal section break — clips the bottom edge of a dark band into
+     an angled line instead of a straight horizontal edge. */
+  .mkt-diagonal-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  }
+  .mkt-diagonal-top {
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, -6%) scale(1.12); }
+  66% { transform: translate(-3%, 5%) scale(0.94); }
+}
+
+/* ------------------------------------------------------------
+ * Hero aurora — cursor-tracked spotlight + drifting, hue-shifting
+ * color blobs layered over the network canvas. Driven by --mx/--my
+ * custom properties written directly from HeroAurora.tsx (no React
+ * re-renders on mousemove).
+ * ------------------------------------------------------------ */
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  --mx: 50%;
+  --my: 35%;
+  background: radial-gradient(480px 480px at var(--mx) var(--my), rgba(255, 255, 255, 0.09), transparent 70%);
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: aurora-drift 22s ease-in-out infinite, aurora-hue 16s linear infinite;
+}
+.aurora-1 {
+  width: 460px;
+  height: 460px;
+  top: -10%;
+  left: 8%;
+  background: radial-gradient(circle, #2cc295, transparent 70%);
+  animation-duration: 24s, 18s;
+}
+.aurora-2 {
+  width: 380px;
+  height: 380px;
+  top: 30%;
+  right: 4%;
+  background: radial-gradient(circle, #00df81, transparent 70%);
+  animation-duration: 28s, 20s;
+  animation-delay: -6s, -3s;
+}
+.aurora-3 {
+  width: 320px;
+  height: 320px;
+  bottom: -8%;
+  left: 30%;
+  background: radial-gradient(circle, #03624c, transparent 70%);
+  animation-duration: 26s, 22s;
+  animation-delay: -12s, -8s;
+}
+.aurora-4 {
+  width: 260px;
+  height: 260px;
+  top: 10%;
+  right: 30%;
+  background: radial-gradient(circle, #17876d, transparent 70%);
+  animation-duration: 20s, 24s;
+  animation-delay: -4s, -10s;
+  opacity: 0.35;
+}
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(6%, -8%) scale(1.15); }
+  50% { transform: translate(-4%, 6%) scale(0.9); }
+  75% { transform: translate(-8%, -4%) scale(1.08); }
+}
+@keyframes aurora-hue {
+  from { filter: blur(80px) hue-rotate(0deg); }
+  to { filter: blur(80px) hue-rotate(360deg); }
+}
+
+/* Kinetic gradient text — the shimmering brand-color sweep used on the
+   hero's highlighted headline phrase. */
+.text-shimmer {
+  background-image: linear-gradient(90deg, #2cc295, #00df81, #17876d, #2cc295);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-slide 7s linear infinite;
+}
+@keyframes shimmer-slide {
+  to { background-position: -300% 0; }
+}
+
+/* Floating decorative stat badges over the hero canvas — small amplitude,
+   staggered durations/delays so they don't move in lockstep. */
+.float-badge {
+  animation: float-badge 6s ease-in-out infinite;
+}
+.float-badge-b {
+  animation-duration: 7s;
+  animation-delay: -2s;
+}
+.float-badge-c {
+  animation-duration: 5.5s;
+  animation-delay: -4s;
+}
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Shine sweep for the hero's primary CTA — a light diagonal highlight
+   that slides across on hover, layered on top of .btn-primary. */
+.hero-cta-shine {
+  position: relative;
+  overflow: hidden;
+}
+.hero-cta-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.55) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.hero-cta-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* Small pulsing "live" indicator dot, used in place of a static emoji. */
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #00df81;
+  animation: pulse-dot 1.8s ease-out infinite;
+}
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(0, 223, 129, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(0, 223, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 223, 129, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb, .aurora-blob, .float-badge, .hero-spotlight, .pulse-dot {
+    animation: none;
+  }
+  .hero-cta-shine::after {
+    transition: none;
+  }
+}

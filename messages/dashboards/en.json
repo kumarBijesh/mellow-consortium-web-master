@@ -1,0 +1,250 @@
+{
+  "DashboardCommon": {
+    "signedInAs": "Signed in as",
+    "signOut": "Sign out",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "roleLabels": {
+      "patient": "Patient",
+      "provider": "Provider",
+      "hospital": "Hospital",
+      "admin": "Admin"
+    }
+  },
+  "AdminDashboard": {
+    "nav": {
+      "overview": "Overview",
+      "hospitals": "Hospitals",
+      "mellowMembers": "Mellow Members",
+      "userManagement": "User Management",
+      "applications": "Applications",
+      "dataMonitoring": "Data Monitoring",
+      "clinicalTrials": "Clinical Trials",
+      "network": "Network",
+      "revenue": "Revenue",
+      "cms": "CMS",
+      "auditLog": "Audit Log"
+    },
+    "stats": {
+      "projectedMrr": "Projected MRR",
+      "totalUsers": "Total users",
+      "hospitals": "Hospitals",
+      "highRiskAlerts": "High-risk alerts",
+      "labReportUploads": "Lab report uploads"
+    }
+  },
+  "HospitalDashboard": {
+    "nav": {
+      "dashboard": "Hospital Dashboard",
+      "manageProviders": "Manage Providers",
+      "allPatients": "All Patients",
+      "clinicalVisits": "Clinical Visits",
+      "diagnoses": "Diagnoses",
+      "labReports": "Lab Reports",
+      "schedule": "Schedule",
+      "analytics": "Analytics",
+      "settings": "Settings"
+    }
+  },
+  "ProviderDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "patients": "Patients",
+      "labReports": "Lab Reports",
+      "requests": "Requests",
+      "messages": "Messages",
+      "documents": "Documents",
+      "meeting": "Meeting",
+      "profile": "Profile"
+    }
+  },
+  "PatientDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "healthTrends": "Health Trends",
+      "medicalRecords": "Medical Records",
+      "clinicalVisits": "Clinical Visits",
+      "diagnoses": "Diagnoses",
+      "documents": "Documents",
+      "nearbyServices": "Nearby Services",
+      "recommendations": "Recommendations",
+      "carePlan": "Care Plan",
+      "myProviders": "My Providers",
+      "messages": "Messages",
+      "account": "Account"
+    },
+    "pages": {
+      "home": {
+        "roleFallback": "Patient",
+        "welcomeFallback": "Welcome",
+        "sampleTag": "Sample",
+        "stats": {
+          "biologicalAge": "Biological Age",
+          "chronologicalAge": "Chronological Age",
+          "riskLevel": "Risk Level",
+          "riskVeryLow": "Very low",
+          "messages": "Messages"
+        },
+        "yrs": "yrs",
+        "bioAgeCard": {
+          "heading": "Biological age",
+          "bioAgeLabel": "bio age",
+          "chronological": "Chronological: {age} · ",
+          "youngerBy": "{years} yrs younger"
+        },
+        "domainsCard": {
+          "heading": "Health domains",
+          "cardiovascular": "Cardiovascular",
+          "metabolic": "Metabolic",
+          "mentalWellness": "Mental wellness",
+          "physicalFitness": "Physical fitness",
+          "nutrition": "Nutrition"
+        },
+        "systemAges": {
+          "heading": "System Ages",
+          "description": "Derived from biomarkers relative to chronological age, using published risk associations. A wellness estimate, not a separate lab test.",
+          "cardiovascularAge": "Cardiovascular age",
+          "metabolicAge": "Metabolic age",
+          "inflammationAge": "Inflammation age"
+        },
+        "careTeam": {
+          "heading": "Your care team",
+          "body": "Connect with a provider to get personalized guidance.",
+          "cta": "Find a provider"
+        }
+      },
+      "account": {
+        "title": "Account",
+        "profile": {
+          "heading": "Profile",
+          "name": "Name",
+          "email": "Email",
+          "accountType": "Account type",
+          "memberSince": "Member since",
+          "notSet": "",
+          "patientFallback": "Patient"
+        },
+        "password": {
+          "heading": "Password"
+        },
+        "applications": {
+          "heading": "Your applications",
+          "submitted": "Submitted {date}",
+          "empty": "No applications yet.",
+          "cta": "Apply to get involved"
+        },
+        "status": {
+          "new": "Submitted",
+          "in_review": "In review",
+          "accepted": "Accepted",
+          "rejected": "Not accepted"
+        }
+      },
+      "carePlan": {
+        "title": "Care Plan",
+        "subtitle": "Diet, exercise, and lifestyle guidance from your connected providers.",
+        "loadError": "Couldn't load your care plan. Make sure {file} has been run.",
+        "providerFallback": "Your provider",
+        "updated": "Updated {date}",
+        "empty": "No care plan from this provider yet.",
+        "noConnections": "No care plans yet. Connect with a provider to get started.",
+        "fields": {
+          "diet_plan": "Diet plan",
+          "exercise_protocol": "Exercise protocol",
+          "yoga": "Yoga",
+          "meditation": "Meditation",
+          "medications": "Medications & supplements",
+          "cautions": "Cautions",
+          "clinical_note": "Clinical note"
+        }
+      },
+      "diagnoses": {
+        "title": "Diagnoses",
+        "subtitle": "Diagnoses recorded by your providers during clinical visits.",
+        "loadError": "Couldn't load your diagnoses. Make sure {file} has been run.",
+        "empty": "No diagnoses recorded yet."
+      },
+      "documents": {
+        "title": "Documents",
+        "subtitle": "View and upload documents tied to your profile. Each document is shared only with the specific provider you choose when uploading it, not automatically with every provider you're connected to.",
+        "loadError": "Couldn't load your documents. Make sure {file1} and {file2} have both been run (including the storage bucket).",
+        "panelTitle": "My documents",
+        "providerFallback": "Provider"
+      },
+      "healthTrends": {
+        "title": "Health Trends",
+        "sampleTag": "Sample",
+        "subtitle": "Biomarker trends across your last 6 lab reports. No real lab data is connected yet. This is a preview of what it will look like once it is.",
+        "biologicalAge": "Biological age",
+        "glucose": "Glucose",
+        "hsCrp": "hs-CRP"
+      },
+      "medicalRecords": {
+        "title": "Medical Records",
+        "subtitle": "A summary of your care history: visits, providers, and documents on file.",
+        "visits": "Visits",
+        "providers": "Providers",
+        "documents": "Documents",
+        "recentVisits": "Recent visits",
+        "viewAll": "View all",
+        "noVisits": "No visits recorded yet.",
+        "careTeamOnFile": "Care team on file",
+        "noProviders": "No providers connected yet."
+      },
+      "messages": {
+        "title": "Messages",
+        "subtitle": "Conversations with your connected providers.",
+        "loadError": "Couldn't load your conversations.",
+        "providerFallback": "Provider",
+        "newMessages": "New messages",
+        "open": "Open",
+        "empty": "No conversations yet. Connect with a provider first from",
+        "findProviderLink": "Find a Provider"
+      },
+      "messageThread": {
+        "backToAll": "All conversations",
+        "providerFallback": "Provider"
+      },
+      "nearbyServices": {
+        "title": "Nearby services",
+        "subtitle": "Find clinics, dietitians, yoga centres, and more near you.",
+        "locationFound": "Location found ({lat}, {lng})",
+        "categories": {
+          "clinics": "Clinics",
+          "dietitians": "Dietitians",
+          "yoga": "Yoga",
+          "meditation": "Meditation",
+          "gym": "Gym",
+          "pharmacy": "Pharmacy"
+        },
+        "notConnected": "Not connected yet",
+        "shareLocationHeading": "Share your location to get started",
+        "shareLocationBody": "Click \"Use my location\" above to find {category} near you on the map.",
+        "mapsNotConfigured": "Maps isn't configured yet. Set {envVar} in your environment.",
+        "near": "near you",
+        "liveResults": "Live Google Maps results. Click any pin for details, reviews, and directions.",
+        "openInGoogleMaps": "Open in Google Maps"
+      },
+      "providers": {
+        "title": "Find a provider",
+        "subtitle": "Search, filter, and request a connection.",
+        "loadError": "Couldn't load providers. Make sure {file} has been run.",
+        "empty": "No providers are available to connect with yet.",
+        "unknownHospital": "Unknown hospital"
+      },
+      "recommendations": {
+        "title": "Recommendations",
+        "subtitle": "Notes and guidance left by your providers.",
+        "loadError": "Couldn't load your recommendations. Make sure {file} has been run.",
+        "providerFallback": "Your provider",
+        "empty": "No recommendations yet."
+      },
+      "visits": {
+        "title": "Visits & diagnoses",
+        "subtitle": "A history log of your visits, as recorded by your providers.",
+        "loadError": "Couldn't load your visit history. Make sure {file} has been run.",
+        "empty": "No visits recorded yet."
+      }
+    }
+  }
+}

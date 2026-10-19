@@ -1,0 +1,721 @@
+{
+  "Nav": {
+    "researchNetwork": "Forschungsnetzwerk",
+    "researchNetworkLinks": {
+      "mellowConsortium": "MELLOW Consortium",
+      "clinicalTrials": "Klinische Studien",
+      "institutions": "Institutionen",
+      "investigators": "Prüfärzte & KOLs"
+    },
+    "digitalPlatforms": "Digitale Plattformen",
+    "digitalPlatformsLinks": {
+      "jlive": "JLIVE",
+      "mellowAge": "MELLOW-Age"
+    },
+    "community": "Gemeinschaft",
+    "communityLinks": {
+      "conferences": "Konferenzen",
+      "newsAndUpdates": "Neuigkeiten & Updates",
+      "contact": "Kontakt"
+    },
+    "about": "Über uns",
+    "news": "Neuigkeiten",
+    "dashboard": "Dashboard",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "becomePartner": "Als Industriepartner beitreten",
+    "becomePhysicianPartner": "Ärztepartner werden",
+    "partner": "Partner werden",
+    "becomeMember": "Mitglied werden",
+    "language": "Sprache",
+    "search": "Suche",
+    "utilityBar": "Globale Forschungsplattform · Eine MusB-Research-Initiative",
+    "closeSearch": "Suche schließen"
+  },
+  "Footer": {
+    "tagline": "Die globale klinische Forschungsplattform für Langlebigkeit. Eine MusB-Research-Initiative.",
+    "platformsHeading": "Plattformen",
+    "communityHeading": "Community",
+    "companyHeading": "Unternehmen",
+    "newsletterHeading": "Newsletter",
+    "newsletterBlurb": "Globale Langlebigkeitswissenschaft, monatlich.",
+    "mellowAge": "MELLOW-Age",
+    "jlive": "JLIVE",
+    "clinicalTrials": "Klinische Studien",
+    "conferences": "Konferenzen",
+    "newsAndUpdates": "Neuigkeiten & Updates",
+    "contact": "Kontakt",
+    "about": "Über uns",
+    "becomePartner": "Als Industriepartner beitreten",
+    "becomePhysicianPartner": "Ärztepartner werden",
+    "signIn": "Anmelden",
+    "copyright": "© {year} MusB Research. Alle Rechte vorbehalten.",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfUse": "Nutzungsbedingungen",
+    "accessibility": "Barrierefreiheit",
+    "adminLogin": "Admin-Anmeldung"
+  },
+  "Home": {
+    "eyebrow": "Multikontinentale Evidenz für Langlebigkeit & Lifestyle",
+    "headingPart1": "Die globale Plattform",
+    "headingPart2": "für klinische Forschung",
+    "headingPart3": "zur Langlebigkeit",
+    "subheading": "Wissenschaft für ein längeres, besseres Leben voranbringen.",
+    "description": "MELLOW verbindet Forschende, klinische Zentren, Industriepartner, wissenschaftliche Verlage und Langlebigkeitsexperten auf sechs Kontinenten und macht aus fragmentierten Studien einen harmonisierten globalen Evidenzkörper.",
+    "ctaPartner": "Als Industriepartner beitreten",
+    "ctaPhysicianPartner": "Ärztepartner werden",
+    "ctaInvestigator": "Als Prüfarzt teilnehmen",
+    "ctaBioAge": "Ihr biologisches Alter erfahren",
+    "activeTrials": "Aktive Studien",
+    "researchSites": "Forschungsstandorte",
+    "continentsConnected": "Verbundene Kontinente",
+    "liveLabel": "Live:",
+    "liveClinicalSites": "{count}+ klinische Standorte aktiv",
+    "sharedPlacebo": "Gemeinsame Placebo-Arme und harmonisierte Endpunkte",
+    "network": {
+      "eyebrow": "Das MELLOW-Netzwerk, live",
+      "heading": "Ein globales Netzwerk für Forschungs- und klinische Exzellenz",
+      "description": "Entdecken Sie MELLOW-Mitgliedsinstitutionen und klinische Standorte auf sechs Kontinenten auf der interaktiven Karte. Wählen Sie einen Standort aus, um dessen Schwerpunkte, Prüfärzte und laufende Studien zu sehen, oder wechseln Sie zur Globusansicht.",
+      "empty": "Netzwerkdaten erscheinen hier, sobald sie eingepflegt wurden (führen Sie supabase/institutions-geo.sql aus)."
+    },
+    "why": {
+      "eyebrow": "Warum MELLOW",
+      "heading": "Entwickelt, um das zu beheben, was die Langlebigkeitsforschung fragmentiert",
+      "description": "Studien von Land zu Land sind langsam, teuer und schwer vergleichbar. MELLOW ersetzt das durch eine gemeinsame Infrastruktur und ein einziges harmonisiertes Programm."
+    },
+    "research": {
+      "eyebrow": "MELLOW-Forschungskonsortium",
+      "heading": "Die Wissenschaft des gesunden Alterns voranbringen",
+      "description": "Gemeinsam mit akademischen Partnern baut das MELLOW-Konsortium ein Netzwerk von Langlebigkeits-Forschungsprogrammen auf. Das Netzwerk wächst noch; auf diese Bereiche konzentrieren wir uns:",
+      "topics": [
+        "Forschung zu gesundem Altern",
+        "Langlebigkeitsstudien",
+        "Forschung zu kognitivem Altern",
+        "Studien zu Mikrobiom & Darm-Hirn-Achse",
+        "Programme für Präzisionsernährung",
+        "Netzwerke für klinische Studien"
+      ]
+    },
+    "trials": {
+      "eyebrow": "Rekrutierung läuft",
+      "heading": "Aktive klinische Studien",
+      "description": "Laufende Studien im gesamten Netzwerk. Erkunden Sie nach Region, prüfen Sie die Teilnahmevoraussetzungen oder fördern Sie eine eigene Studie mit gemeinsamem Studienarm.",
+      "empty": "Studien erscheinen hier, sobald sie in Supabase eingepflegt wurden.",
+      "viewDetails": "Details ansehen"
+    },
+    "agePromo": {
+      "kicker": "MELLOW-Age",
+      "heading": "Erfahren Sie Ihr biologisches Alter. Verbessern Sie, wie Sie altern.",
+      "description": "Teilen Sie Ihre Laborwerte mit einer verbundenen MELLOW-Fachkraft, lassen Sie Ihr biologisches Alter bewerten und erfassen und folgen Sie einem gemeinsam erstellten, persönlichen Behandlungsplan.",
+      "steps": [
+        "Laborbefunde hochladen",
+        "Ihre Fachkraft prüft Ihre Biomarker",
+        "Biologisches Alter und Risikostufe erhalten",
+        "Einem persönlichen Behandlungsplan folgen"
+      ],
+      "ctaStart": "Meine Analyse starten",
+      "ctaProviders": "Für Leistungserbringer",
+      "resultCard": {
+        "yourResult": "Ihr Ergebnis",
+        "sample": "Beispiel",
+        "bioAge": "biologisches Alter",
+        "chronologicalAge": "Chronologisches Alter {age} · ",
+        "youngerBy": "{years} Jahre jünger",
+        "riskLevel": "Risikostufe",
+        "riskLow": "Niedrig",
+        "reviewedBy": "Geprüft von",
+        "yourProvider": "Ihrer Fachkraft"
+      },
+      "roadmapLink": "Zur MELLOW-Age-Roadmap"
+    },
+    "platform": {
+      "eyebrow": "Die Plattform",
+      "heading": "Gemacht für die Menschen, die Versorgung leisten",
+      "description": "Eine vernetzte Plattform für Ärztinnen und Ärzte der Präventions- und Wellnessmedizin und die Einrichtungen, in denen sie arbeiten.",
+      "providers": {
+        "label": "Für Behandelnde",
+        "heading": "Ein klinisches Dashboard für moderne Wellnessmedizin",
+        "points": [
+          "Live-Patientenliste mit Risikostratifizierung und biologischem Alter über Ihren gesamten Patientenstamm.",
+          "Behandlungsplan-Editor: Ernährungs-, Trainings-, Meditations- und Medikationspläne sofort an Patienten senden.",
+          "Personalisierte Empfehlungen, die direkt im Dashboard jedes Patienten erscheinen.",
+          "Sichere Nachrichten mit Ihren Patienten sowie ein teilbarer Videomeeting-Link für Telekonsultationen.",
+          "Klinische Besuche, Diagnosen und Laborbefund-Historie an einem Ort."
+        ],
+        "cta": "Als Behandelnde bewerben"
+      },
+      "hospitals": {
+        "label": "Für Kliniken & Wellnesszentren",
+        "heading": "Ihr gesamtes klinisches Team über ein Portal verwalten",
+        "points": [
+          "Verwaltung mehrerer Standorte: Standorte hinzufügen, Behandelnde zuweisen und Ihr gesamtes Team verwalten.",
+          "Terminplanung: Verfügbarkeit der Behandelnden Woche für Woche festlegen.",
+          "Netzwerk-Analysen: aktive Behandelnde, Patienten, Besuchsvolumen und Fachrichtungsverteilung über all Ihre Standorte.",
+          "Rollenbasierte Zugriffskontrolle: Behandelnde sehen nur ihre eigenen Patienten, Klinik-Admins ihr eigenes Netzwerk, und Superadmins verwalten alle Kliniken."
+        ],
+        "cta": "Als Klinik Partner werden"
+      }
+    },
+    "privacy": {
+      "eyebrow": "Datenschutz & Sicherheit",
+      "heading": "Ihre Gesundheitsdaten gehören Ihnen",
+      "items": {
+        "secure": {
+          "title": "Verschlüsselt und zugriffsgeschützt",
+          "body": "Ihre Daten werden bei der Übertragung und im Ruhezustand verschlüsselt. Sie sehen Ihre eigenen Unterlagen, und Fachkräfte sehen nur die mit ihnen verbundenen Patienten."
+        },
+        "bioAge": {
+          "title": "So wird Ihr biologisches Alter bestimmt",
+          "body": "Ihre verbundene Fachkraft prüft Ihre Laborwerte und erfasst Ihr biologisches Alter. Es wird nicht automatisch berechnet."
+        },
+        "notDiagnostic": {
+          "title": "Kein Diagnoseinstrument",
+          "body": "MELLOW ist kein Diagnoseinstrument und stellt keine medizinischen Diagnosen. Alle klinischen Entscheidungen liegen bei der behandelnden Fachkraft."
+        },
+        "notEmergency": {
+          "title": "Keine Notfallversorgung",
+          "body": "MELLOW ist eine Plattform für Wohlbefinden und Prävention. Sie ersetzt keine medizinische Notfallversorgung. Wenden Sie sich bei dringenden gesundheitlichen Problemen sofort an Ihre Ärztin, Ihren Arzt oder den Notdienst."
+        }
+      }
+    },
+    "founders": {
+      "eyebrow": "Führung",
+      "heading": "Gegründet von Vordenkern der translationalen Wissenschaft"
+    },
+    "news": {
+      "eyebrow": "Neuestes aus dem Netzwerk",
+      "heading": "Neuigkeiten, Veranstaltungen & neue Wissenschaft",
+      "empty": "Beiträge erscheinen hier, sobald sie in Supabase eingepflegt wurden."
+    },
+    "finalCta": {
+      "eyebrow": "Partner von MELLOW werden",
+      "heading": "Eine Studie. Sechs Kontinente. Ein Budget.",
+      "description": "Erzeugen Sie glaubwürdige, länderübergreifende klinische Evidenz bei 30–50 % geringeren Kosten und bis zu 40 % schneller, ohne eine eigene globale Forschungsinfrastruktur aufzubauen.",
+      "ctaCompare": "Mitgliedschaftspläne vergleichen",
+      "ctaDiscoveryCall": "Kennenlerngespräch buchen",
+      "ctaProspectus": "Prospekt herunterladen"
+    }
+  },
+  "WhyPoints": {
+    "globalTrials": {
+      "title": "Globale Studien",
+      "body": "Ein Protokoll läuft auf sechs Kontinenten mit vielfältigen, repräsentativen Populationen."
+    },
+    "sharedPlaceboArms": {
+      "title": "Gemeinsame Placebo-Arme",
+      "body": "Gebündelte Kontrollinfrastruktur senkt Kosten und beschleunigt die parallele Evidenzgenerierung."
+    },
+    "kolNetwork": {
+      "title": "KOL-Netzwerk",
+      "body": "Vorab geprüfte Prüfärzte und Meinungsführer, bereit zum Konzipieren, Durchführen und Referieren."
+    },
+    "standardizedBiomarkers": {
+      "title": "Standardisierte Biomarker",
+      "body": "Harmonisierte Panels und Endpunkte machen Ergebnisse standortübergreifend vergleichbar."
+    },
+    "publicationPathway": {
+      "title": "Publikationsweg",
+      "body": "Ein integrierter Weg von Studiendaten zur begutachteten Publikation in JLIVE."
+    },
+    "internationalVisibility": {
+      "title": "Internationale Sichtbarkeit",
+      "body": "Konferenzen, Medien und eine globale Plattform verstärken jeden Befund weltweit."
+    }
+  },
+  "StatsBar": {
+    "globalRegions": "Globale Regionen",
+    "clinicalSites": "Klinische Standorte",
+    "publications": "Publikationen",
+    "investigators": "Prüfärzte",
+    "countries": "Länder",
+    "longevityMarket": "Langlebigkeitsmarkt",
+    "industryPartners": "Industriepartner"
+  },
+  "PersonaPicker": {
+    "eyebrow": "Wählen Sie Ihren Weg",
+    "heading": "Finden Sie das MELLOW für Sie",
+    "description": "Sieben Türen zu einer Plattform. Sagen Sie uns, wer Sie sind, und wir zeigen Ihnen, was zählt: Vorteile, Voraussetzungen und den schnellsten Einstieg.",
+    "notSure": {
+      "title": "Noch nicht sicher?",
+      "description": "Machen Sie eine 60-sekündige Tour durch das gesamte MELLOW-Ökosystem.",
+      "cta": "Alles entdecken"
+    }
+  },
+  "Personas": {
+    "biotech_company": {
+      "label": "Wellness- & Biotech-Unternehmen",
+      "description": "Führen Sie Studien durch oder arbeiten Sie an Biomarker- und Formulierungsforschung mit.",
+      "pathway": "Sponsor-Weg"
+    },
+    "clinical_investigator": {
+      "label": "Klinischer Prüfarzt",
+      "description": "Leiten oder begleiten Sie harmonisierte länderübergreifende Studien.",
+      "pathway": "Prüfarzt-Weg"
+    },
+    "academic_institution": {
+      "label": "Akademische Einrichtung",
+      "description": "Bringen Sie Standorte, Kohorten oder gemeinsame Forschungsinfrastruktur ein.",
+      "pathway": "Institutions-Weg"
+    },
+    "individual": {
+      "label": "Einzelperson",
+      "description": "Entdecken Sie MELLOW-Age und verfolgen Sie Ihr eigenes biologisches Alter.",
+      "pathway": "Analyse starten"
+    },
+    "healthcare_provider": {
+      "label": "Leistungserbringer",
+      "description": "Bieten Sie Ihren eigenen Patienten MELLOW-Age-Behandlungspläne an.",
+      "pathway": "Leistungserbringer-Weg"
+    },
+    "hospital_wellness_group": {
+      "label": "Krankenhaus oder Wellness-Gruppe",
+      "description": "Bringen Sie Ihr Team auf das klinische MELLOW-Age-Dashboard.",
+      "pathway": "Unternehmens-Weg"
+    },
+    "journal_conference_partner": {
+      "label": "Fachzeitschrift oder Konferenzpartner",
+      "description": "Arbeiten Sie mit dem JLIVE-Verlag oder dem Annual Meeting zusammen.",
+      "pathway": "Partner-Weg"
+    }
+  },
+  "EcosystemGrid": {
+    "eyebrow": "Das Ökosystem",
+    "heading": "Ein integriertes globales Ökosystem",
+    "description": "Jede Sparte steht für sich und wächst unabhängig, und teilt sich dennoch ein Netzwerk, eine Marke und einen Evidenzfluss von der Studie über die Publikation bis zur Praxis.",
+    "enterDivision": "Sparte betreten"
+  },
+  "TrialStatus": {
+    "active": "Aktiv",
+    "recruiting": "Rekrutierung läuft",
+    "completed": "Abgeschlossen",
+    "planned": "Geplant",
+    "all": "Alle"
+  },
+  "About": {
+    "eyebrow": "Über uns · Eine MusB-Research-Initiative",
+    "heading": "Die weltweite Langlebigkeitsforschung zusammenbringen",
+    "intro": "Mellow Consortium ist eine globale klinische Forschungsplattform, die Menschen und Institutionen verbindet, die die menschliche Langlebigkeit voranbringen. Als MusB-Research-Initiative verbinden wir Forschende, klinische Zentren, Industriepartner und wissenschaftliche Verlage in einem Netzwerk, damit die Erforschung des Alterns schneller, kooperativer und rigoroser wird.",
+    "mission": {
+      "heading": "Unsere Mission",
+      "body": "Wissenschaft für ein längeres, besseres Leben voranzubringen, indem fragmentierte, isolierte Forschung in einen harmonisierten globalen Evidenzkörper verwandelt wird, auf dem jeder in diesem Feld aufbauen kann."
+    },
+    "whatWeDo": {
+      "heading": "Was wir tun",
+      "body": "Wir geben der Langlebigkeits-Community eine gemeinsame Infrastruktur: harmonisierte Studiendesigns und Endpunkte, vernetzte klinische Standorte, einen Verlagsbereich und digitale Tools wie MELLOW-Age, die Forschung zu Patienten und Leistungserbringern bringen. Zusammen verwandeln diese isolierte Befunde in kumulatives, vergleichbares Wissen."
+    },
+    "globalNetwork": {
+      "heading": "Ein globales Netzwerk",
+      "body": "MELLOW erstreckt sich über klinische Standorte auf sechs Kontinenten und teilt Placebodaten und harmonisierte Endpunkte, sodass Ergebnisse weltweit verglichen und kombiniert werden können."
+    },
+    "getInvolved": {
+      "heading": "Mitmachen",
+      "body": "Forschende, Kliniken, Krankenhäuser und Industriepartner sind alle Teil des MELLOW-Netzwerks. Wenn Ihre Arbeit mit Langlebigkeit zu tun hat, gibt es hier einen Platz für Sie.",
+      "cta": "Als Industriepartner beitreten"
+    }
+  },
+  "MellowAge": {
+    "eyebrow": "MELLOW-Age · Biologisches Alter & Wellness",
+    "heading": "Erfahren Sie Ihr biologisches Alter. Verbessern Sie, wie Sie altern.",
+    "subheading": "Verwandeln Sie Ihre Blutwerte in ein klares Bild davon, wie Ihr Körper altert, und einen Plan, um es zu ändern.",
+    "ctaGetStarted": "Loslegen",
+    "ctaSignIn": "Anmelden",
+    "howItWorks": {
+      "heading": "So funktioniert MELLOW-Age",
+      "step1": {
+        "title": "Laborwerte teilen",
+        "body": "Laden Sie Ihre routinemäßigen Blutbefunde hoch und teilen Sie sie mit Ihrer verbundenen Fachkraft. Keine neuen Tests nötig."
+      },
+      "step2": {
+        "title": "Ihre Fachkraft prüft sie",
+        "body": "Ihre verbundene MELLOW-Fachkraft prüft Ihre Ergebnisse und Biomarker."
+      },
+      "step3": {
+        "title": "Biologisches Alter erhalten",
+        "body": "Ihre Fachkraft erfasst Ihr biologisches Alter und Ihre Risikostufe in Ihrer MELLOW-Akte."
+      },
+      "step4": {
+        "title": "Einem persönlichen Plan folgen",
+        "body": "Ihre Fachkraft erstellt mit Ihnen einen Behandlungsplan zu Ernährung, Bewegung, Meditation und Medikation, sichtbar in Ihrem Dashboard."
+      },
+      "disclaimer": "Das biologische Alter wird derzeit von Ihrer verbundenen Fachkraft bewertet und erfasst. MELLOW berechnet es nicht automatisch."
+    },
+    "roadmap": {
+      "eyebrow": "Auf unserer Roadmap",
+      "heading": "Wohin sich die Intelligenz des biologischen Alters entwickelt",
+      "description": "Wir arbeiten an neuen bereichsspezifischen Alterswerten auf Basis neuer Biomarker-Kategorien und KI. Noch ist keiner davon verfügbar.",
+      "badge": "Geplant",
+      "cards": {
+        "gutPermeability": {
+          "title": "Darmpermeabilitäts-Alter",
+          "body": "Bewertung eines durchlässigen Darms und Alterswert des Mikrobioms."
+        },
+        "microbiome": {
+          "title": "Mikrobiom-Alter",
+          "body": "Altern auf Basis von Vielfalt und Zusammensetzung des Mikrobioms."
+        },
+        "inflammation": {
+          "title": "Entzündungs-Alter",
+          "body": "Multimarker-Bewertung des Inflammaging."
+        },
+        "cognitive": {
+          "title": "Kognitives Alter",
+          "body": "Alterswert des Gehirns auf Basis neurologischer Biomarker."
+        },
+        "epigenetic": {
+          "title": "Epigenetisches Alter",
+          "body": "Biologisches Alter auf Basis von DNA-Methylierungsuhren."
+        },
+        "metabolic": {
+          "title": "Metabolisches Alter",
+          "body": "Erweiterter Kombinationswert aus Insulin, Lipiden und Glukose."
+        },
+        "cardiovascular": {
+          "title": "Kardiovaskuläres Alter",
+          "body": "Alterswert auf Basis vaskulärer und kardialer Biomarker."
+        },
+        "aiCoach": {
+          "title": "KI-Langlebigkeitscoach",
+          "body": "Persönliche Empfehlungen auf Basis Ihrer Laborverläufe und Ziele."
+        }
+      }
+    },
+    "whoItsFor": {
+      "heading": "Entwickelt für Einzelpersonen, Leistungserbringer und Krankenhäuser",
+      "individuals": {
+        "title": "Einzelpersonen",
+        "body": "Verbinden Sie sich mit einer MELLOW-Fachkraft, teilen Sie Ihre Laborbefunde und folgen Sie dem gemeinsam erstellten Behandlungsplan."
+      },
+      "providers": {
+        "title": "Leistungserbringer",
+        "body": "Überprüfen Sie Biomarker von Patienten, stratifizieren Sie Risiken und steuern Sie die Versorgung über ein einziges Dashboard."
+      },
+      "hospitals": {
+        "title": "Krankenhäuser & Wellness-Gruppen",
+        "body": "Verwalten Sie Standorte, Leistungserbringer und Patienten in Ihrer gesamten Organisation."
+      }
+    },
+    "doors": {
+      "heading": "Bei MELLOW-Age anmelden",
+      "subheading": "Wählen Sie, wie Sie beitreten:",
+      "patient": {
+        "label": "Ich bin Patient",
+        "cta": "Anmelden / Konto erstellen"
+      },
+      "provider": {
+        "label": "Ich bin Leistungserbringer",
+        "cta": "Anmeldung für Leistungserbringer"
+      },
+      "hospital": {
+        "label": "Ich bin ein Krankenhaus oder eine Wellness-Gruppe",
+        "cta": "Krankenhaus-Anmeldung"
+      },
+      "admin": {
+        "label": "Administrator",
+        "cta": "Admin-Anmeldung"
+      }
+    },
+    "medicalDisclaimer": "MELLOW-Age ist ein Wellness- und Forschungstool und ersetzt keine professionelle medizinische Beratung, Diagnose oder Behandlung. Konsultieren Sie bezüglich Ihrer Gesundheit immer eine qualifizierte medizinische Fachkraft."
+  },
+  "Access": {
+    "eyebrow": "Anmelden",
+    "heading": "Wer meldet sich an?",
+    "subheading": "MELLOW verfügt über ein separates Portal für jeden Kontotyp. Wählen Sie Ihres aus, und wir leiten Sie zur richtigen Anmelde- (oder Registrierungs-)Seite weiter."
+  },
+  "Contact": {
+    "eyebrow": "Kontakt",
+    "heading": "Kontaktieren Sie uns",
+    "description": "Fragen zur Plattform, zu Partnerschaften oder zur Teilnahme als Prüfarzt? Senden Sie uns eine Nachricht, und die richtige Person meldet sich bei Ihnen.",
+    "preferEmail": "Bevorzugen Sie E-Mail? Erreichen Sie uns direkt unter"
+  },
+  "Trials": {
+    "eyebrow": "Forschung",
+    "heading": "Klinische Studien",
+    "description": "Harmonisierte, länderübergreifende Studien im MELLOW-Consortium-Netzwerk, von der frühen Rekrutierung bis zu abgeschlossenen Studien.",
+    "filterAriaLabel": "Studien nach Status filtern",
+    "empty": "Diesem Filter entsprechen noch keine Studien.",
+    "longevityFallback": "Langlebigkeit",
+    "backToAll": "Alle Studien",
+    "sponsor": "Sponsor",
+    "leadInvestigator": "Leitender Prüfarzt",
+    "trialSites": "Studienstandorte",
+    "viewDetails": "Details ansehen",
+    "location": "Standort",
+    "enrolCta": "Teilnahme prüfen & anmelden",
+    "enrolNote": "Eignung und Anmeldung werden auf {host} abgewickelt."
+  },
+  "Jlive": {
+    "eyebrow": "JLIVE · Wissenschaftliches Publizieren",
+    "heading": "Begutachtete Langlebigkeitsforschung, offen für das Netzwerk",
+    "description": "JLIVE ist der Verlagsbereich von Mellow Consortium, ein Zuhause für rigorose, begutachtete Forschung zu Altern und Langlebigkeit. Er verbindet die im MELLOW-Netzwerk laufenden Studien mit der breiteren wissenschaftlichen Gemeinschaft.",
+    "publishHeading": "Mit JLIVE publizieren",
+    "publishBody": "Teilen Sie Erkenntnisse aus MELLOW-nahen Studien mit einer globalen, auf Langlebigkeit fokussierten Leserschaft.",
+    "comingSoon": "Demnächst verfügbar",
+    "latestHeading": "Neueste Publikationen",
+    "latestBody": "Die Publikationsliste folgt in Kürze."
+  },
+  "Conferences": {
+    "eyebrow": "Veranstaltungen",
+    "heading": "Bevorstehende Veranstaltungen",
+    "subheading": "Konferenzen, Webinare, Workshops und mehr aus dem gesamten MELLOW-Netzwerk.",
+    "tagline": "Vernetzen | Zusammenarbeiten | Gemeinsam die Gesundheitsspanne verlängern",
+    "viewFullCalendar": "Vollständigen Kalender ansehen",
+    "banner": {
+      "line1": "Menschen",
+      "line2": "Wissenschaft",
+      "line3": "Ein längeres, gesünderes Leben",
+      "caption": "Veranstaltungen, die Entdeckung, Zusammenarbeit und Wirkung inspirieren.",
+      "placeholderNote": "Veranstaltungsfoto folgt in Kürze"
+    },
+    "filters": {
+      "searchPlaceholder": "Veranstaltungen suchen...",
+      "allEvents": "Alle Veranstaltungen",
+      "types": {
+        "conference": "Konferenzen",
+        "webinar": "Webinare",
+        "workshop": "Workshops",
+        "meeting": "Meetings",
+        "consortium": "Konsortium",
+        "other": "Sonstige"
+      },
+      "sortLabel": "Sortieren nach",
+      "sortSoonest": "Datum (nächste)",
+      "sortLatest": "Datum (späteste)",
+      "sortAZ": "A-Z"
+    },
+    "card": {
+      "viewDetails": "Details ansehen",
+      "onlineVirtual": "Online (virtuelle Veranstaltung)"
+    },
+    "empty": "Keine Veranstaltungen entsprechen Ihrer Suche.",
+    "ctaStrip": {
+      "heading": "Verpassen Sie keine Veranstaltung!",
+      "body": "Erhalten Sie Benachrichtigungen über neue Konferenzen, Webinare und Workshops aus dem MELLOW-Netzwerk."
+    },
+    "detail": {
+      "backToEvents": "Alle Veranstaltungen",
+      "shareHeading": "Diese Veranstaltung teilen"
+    },
+    "calendarPage": {
+      "eyebrow": "Kalender",
+      "heading": "Vollständiger Veranstaltungskalender",
+      "description": "Jede bevorstehende MELLOW-Veranstaltung, nach Monat gruppiert.",
+      "backToEvents": "Zurück zu Veranstaltungen",
+      "empty": "Keine bevorstehenden Veranstaltungen."
+    }
+  },
+  "News": {
+    "eyebrow": "Updates",
+    "heading": "Neuigkeiten, Veranstaltungen & neue Wissenschaft",
+    "description": "Konsortiumsnachrichten, Entdeckungen und Updates aus dem gesamten MELLOW-Netzwerk.",
+    "empty": "Beiträge erscheinen hier, sobald sie veröffentlicht wurden.",
+    "backToAll": "Alle Neuigkeiten"
+  },
+  "NetworkMap": {
+    "filterAriaLabel": "Netzwerk nach Region filtern",
+    "allRegions": "Alle Regionen",
+    "regions": {
+      "northAmerica": "Nordamerika",
+      "southAmerica": "Südamerika",
+      "europe": "Europa",
+      "africa": "Afrika",
+      "middleEast": "Naher Osten",
+      "asiaPacific": "Asien-Pazifik"
+    },
+    "memberInstitutions": "Mitgliedsinstitutionen",
+    "countries": "Länder",
+    "investigatorsStat": "Prüfärzte",
+    "activeStudiesStat": "Aktive Studien",
+    "backToNetwork": "Zurück zum Netzwerk",
+    "verifiedInstitution": "Verifizierte MELLOW-Institution",
+    "worldMap": "Weltkarte",
+    "globe": "Globus",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "resetView": "Ansicht zurücksetzen",
+    "hintMap": "Scrollen zum Zoomen · Ziehen zum Verschieben · Auf einen Pin klicken für Details",
+    "hintGlobe": "Ziehen zum Drehen · Auf einen Standort klicken, um sein Profil zu öffnen",
+    "worldLabel": "Welt",
+    "backTo": "Zurück zu {place}",
+    "institutionsCount": "{count, plural, one {# Institution} other {# Institutionen}}",
+    "investigatorsListLabel": "{count, plural, one {# Prüfarzt} other {# Prüfärzte}}",
+    "noInstitutions": "Hier sind noch keine Institutionen gelistet.",
+    "noInvestigators": "Es sind noch keine Prüfärzte gelistet.",
+    "viewFullProfile": "Vollständiges Profil ansehen"
+  },
+  "ContactForm": {
+    "nameLabel": "Name",
+    "emailLabel": "E-Mail",
+    "organizationLabel": "Organisation",
+    "organizationOptional": "(optional)",
+    "reasonLabel": "Ich melde mich als",
+    "reasons": {
+      "Individual": "Einzelperson",
+      "Provider": "Leistungserbringer",
+      "Hospital": "Krankenhaus",
+      "Researcher": "Forschende(r)",
+      "Partner": "Partner",
+      "Other": "Sonstiges"
+    },
+    "messageLabel": "Nachricht",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "sending": "Wird gesendet…",
+    "sendMessage": "Nachricht senden",
+    "successTitle": "Danke! Ihre Nachricht ist unterwegs.",
+    "successBody": "Wir melden uns unter der von Ihnen angegebenen E-Mail-Adresse."
+  },
+  "NewsletterForm": {
+    "emailAddressSr": "E-Mail-Adresse",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "join": "Abonnieren",
+    "subscribed": "Sie sind angemeldet.",
+    "error": "Etwas ist schiefgelaufen."
+  },
+  "NotFoundPage": {
+    "eyebrow": "404",
+    "heading": "Seite nicht gefunden",
+    "body": "Die gesuchte Seite existiert nicht oder wurde möglicherweise verschoben.",
+    "backHome": "Zurück zur Startseite",
+    "viewTrials": "Studien ansehen"
+  },
+  "ErrorPage": {
+    "eyebrow": "Fehler",
+    "heading": "Etwas ist schiefgelaufen",
+    "body": "Beim Laden dieser Seite ist ein unerwarteter Fehler aufgetreten. Sie können es erneut versuchen oder zur Startseite zurückkehren.",
+    "tryAgain": "Erneut versuchen",
+    "backHome": "Zurück zur Startseite"
+  },
+  "Search": {
+    "eyebrow": "Suche",
+    "heading": "MELLOW durchsuchen",
+    "inputLabel": "Suche",
+    "placeholder": "Studien, Neuigkeiten suchen…",
+    "submit": "Suchen",
+    "prompt": "Durchsuchen Sie klinische Studien und Neuigkeiten.",
+    "noResults": "Keine Ergebnisse für „{query}“.",
+    "trialsHeading": "Klinische Studien ({count})",
+    "newsHeading": "Neuigkeiten ({count})",
+    "longevityFallback": "Langlebigkeit",
+    "pagesHeading": "Seiten ({count})"
+  },
+  "InvestigatorInquiry": {
+    "title": "Anfrage zu Prüfarzt",
+    "requestingIntro": "Anfrage zur Vermittlung an {name}",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "companyInstitution": "Unternehmen / Institution",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "organizationType": "Organisationstyp",
+    "partnershipInterest": "Interesse an Partnerschaft",
+    "message": "Nachricht / Fragen (optional)",
+    "selectPlaceholder": "Auswählen...",
+    "submit": "Discovery Call anfragen",
+    "submitting": "Wird gesendet…",
+    "success": "Danke — Ihre Anfrage wurde gesendet. Unser Team meldet sich in Kürze per E-Mail.",
+    "error": "Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    "cancel": "Abbrechen",
+    "orgTypes": {
+      "biotech_pharma": "Biotech / Pharma",
+      "academic_research": "Akademische / Forschungseinrichtung",
+      "hospital_health_system": "Krankenhaus / Gesundheitssystem",
+      "cro": "CRO (Auftragsforschungsinstitut)",
+      "investor_vc": "Investor / Risikokapital",
+      "media_publication": "Medien / Publikation",
+      "other": "Sonstiges"
+    },
+    "interests": {
+      "clinical_trial_collaboration": "Zusammenarbeit bei klinischer Studie",
+      "research_partnership": "Forschungspartnerschaft",
+      "advisory_consulting": "Beratung",
+      "speaking_conference": "Vortrag / Konferenz",
+      "media_interview": "Medieninterview",
+      "other": "Sonstiges"
+    }
+  },
+  "Institutions": {
+    "eyebrow": "Forschungsnetzwerk",
+    "heading": "Globale Forschungseinrichtungen",
+    "subheading": "Entdecken Sie MELLOWs Netzwerk aus Mitgliedseinrichtungen und klinischen Standorten auf sechs Kontinenten.",
+    "searchPlaceholder": "Nach Einrichtung, Stadt oder Land suchen...",
+    "searchLabel": "Einrichtungen durchsuchen",
+    "specializationLabel": "Fachgebiet",
+    "allSpecializations": "Alle Fachgebiete",
+    "sortLabel": "Sortieren",
+    "sort": {
+      "az": "A–Z",
+      "investigators": "Meiste Prüfärzte",
+      "recent": "Zuletzt hinzugefügt"
+    },
+    "resultsCount": "{count, plural, one {# Einrichtung} other {# Einrichtungen}}",
+    "investigatorCount": "{count, plural, =0 {Noch keine Prüfärzte} one {# Prüfarzt} other {# Prüfärzte}}",
+    "viewInstitution": "Einrichtung ansehen",
+    "hq": "Zentrale",
+    "clearFilters": "Filter zurücksetzen",
+    "empty": "Keine Einrichtung entspricht Ihrer Suche. Versuchen Sie eine andere Region oder einen anderen Suchbegriff.",
+    "cta": {
+      "heading": "Gehört Ihre Einrichtung zum MELLOW-Netzwerk?",
+      "body": "Bewerben Sie sich für einen Eintrag Ihrer Einrichtung und vernetzen Sie sich mit unserer globalen Forschungsgemeinschaft.",
+      "button": "Jetzt bewerben"
+    },
+    "detail": {
+      "backToAll": "Alle Einrichtungen",
+      "website": "Website besuchen",
+      "investigatorsStat": "Prüfärzte",
+      "trialsStat": "Studien",
+      "hq": "Netzwerkzentrale",
+      "specializations": "Fachgebiete",
+      "investigatorsHeading": "Prüfärzte",
+      "noInvestigators": "An dieser Einrichtung sind noch keine Prüfärzte eingetragen.",
+      "requestIntro": "Kontakt anfragen",
+      "trialsHeading": "Studien an dieser Einrichtung",
+      "ctaHeading": "Interesse an einer Zusammenarbeit mit {name}?",
+      "ctaBody": "Erzählen Sie uns von Ihrem Vorhaben, und wir bringen Sie mit den richtigen Personen zusammen.",
+      "ctaButton": "Kontakt anfragen"
+    }
+  },
+  "Investigators": {
+    "eyebrow": "Forschungsnetzwerk",
+    "heading": "Prüfärzte & KOLs",
+    "subheading": "Lernen Sie die Forschenden, Kliniker und Meinungsführer kennen, die die Langlebigkeitsforschung im MELLOW-Netzwerk voranbringen.",
+    "searchPlaceholder": "Nach Name, Fachgebiet oder Einrichtung suchen...",
+    "searchLabel": "Prüfärzte durchsuchen",
+    "affiliationLabel": "Zugehörigkeit",
+    "affiliation": {
+      "all": "Alle",
+      "institution": "Mit Einrichtung",
+      "independent": "Unabhängig"
+    },
+    "sortLabel": "Sortieren",
+    "sort": {
+      "az": "A–Z",
+      "country": "Nach Land",
+      "recent": "Zuletzt hinzugefügt"
+    },
+    "resultsCount": "{count, plural, one {# Prüfarzt} other {# Prüfärzte}}",
+    "independent": "Unabhängiger Prüfarzt",
+    "viewProfile": "Profil ansehen",
+    "clearFilters": "Filter zurücksetzen",
+    "empty": "Keine Prüfärzte entsprechen Ihrer Suche. Versuchen Sie eine andere Region oder einen anderen Suchbegriff.",
+    "cta": {
+      "heading": "Forschen Sie zur Langlebigkeit oder sind Sie KOL?",
+      "body": "Treten Sie dem MELLOW-Netzwerk bei und vernetzen Sie sich weltweit mit Einrichtungen, Sponsoren und Partnern.",
+      "button": "Als Prüfarzt bewerben"
+    },
+    "detail": {
+      "backToAll": "Alle Prüfärzte",
+      "linkedin": "LinkedIn",
+      "website": "Website",
+      "about": "Über",
+      "focusArea": "Schwerpunkt",
+      "qualifications": "Qualifikationen",
+      "competencies": "Kernkompetenzen",
+      "publications": "Ausgewählte Publikationen",
+      "trials": "Studien",
+      "ctaHeading": "Mit {name} zusammenarbeiten",
+      "ctaBody": "Fragen Sie eine Vorstellung an, und unser Team stellt den Kontakt her.",
+      "ctaButton": "Kontakt anfragen",
+      "membershipPrompt": "Interesse an einer Mitgliedschaft?",
+      "membershipLink": "Kennenlerngespräch buchen"
+    }
+  }
+}

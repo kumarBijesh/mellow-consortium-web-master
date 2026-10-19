@@ -1,0 +1,250 @@
+{
+  "DashboardCommon": {
+    "signedInAs": "Connecté en tant que",
+    "signOut": "Se déconnecter",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "roleLabels": {
+      "patient": "Patient",
+      "provider": "Prestataire",
+      "hospital": "Hôpital",
+      "admin": "Administrateur"
+    }
+  },
+  "AdminDashboard": {
+    "nav": {
+      "overview": "Aperçu",
+      "hospitals": "Hôpitaux",
+      "mellowMembers": "Membres Mellow",
+      "userManagement": "Gestion des utilisateurs",
+      "applications": "Candidatures",
+      "dataMonitoring": "Surveillance des données",
+      "clinicalTrials": "Essais cliniques",
+      "network": "Réseau",
+      "revenue": "Revenus",
+      "cms": "CMS",
+      "auditLog": "Journal d'audit"
+    },
+    "stats": {
+      "projectedMrr": "MRR projeté",
+      "totalUsers": "Utilisateurs totaux",
+      "hospitals": "Hôpitaux",
+      "highRiskAlerts": "Alertes à haut risque",
+      "labReportUploads": "Téléversements de rapports de labo"
+    }
+  },
+  "HospitalDashboard": {
+    "nav": {
+      "dashboard": "Tableau de bord de l'hôpital",
+      "manageProviders": "Gérer les prestataires",
+      "allPatients": "Tous les patients",
+      "clinicalVisits": "Visites cliniques",
+      "diagnoses": "Diagnostics",
+      "labReports": "Rapports de labo",
+      "schedule": "Planning",
+      "analytics": "Analytique",
+      "settings": "Paramètres"
+    }
+  },
+  "ProviderDashboard": {
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "patients": "Patients",
+      "labReports": "Rapports de labo",
+      "requests": "Demandes",
+      "messages": "Messages",
+      "documents": "Documents",
+      "meeting": "Réunion",
+      "profile": "Profil"
+    }
+  },
+  "PatientDashboard": {
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "healthTrends": "Tendances de santé",
+      "medicalRecords": "Dossiers médicaux",
+      "clinicalVisits": "Visites cliniques",
+      "diagnoses": "Diagnostics",
+      "documents": "Documents",
+      "nearbyServices": "Services à proximité",
+      "recommendations": "Recommandations",
+      "carePlan": "Plan de soins",
+      "myProviders": "Mes prestataires",
+      "messages": "Messages",
+      "account": "Compte"
+    },
+    "pages": {
+      "home": {
+        "roleFallback": "Patient",
+        "welcomeFallback": "Bienvenue",
+        "sampleTag": "Exemple",
+        "stats": {
+          "biologicalAge": "Âge biologique",
+          "chronologicalAge": "Âge chronologique",
+          "riskLevel": "Niveau de risque",
+          "riskVeryLow": "Très faible",
+          "messages": "Messages"
+        },
+        "yrs": "ans",
+        "bioAgeCard": {
+          "heading": "Âge biologique",
+          "bioAgeLabel": "âge biologique",
+          "chronological": "Chronologique : {age} · ",
+          "youngerBy": "{years} ans plus jeune"
+        },
+        "domainsCard": {
+          "heading": "Domaines de santé",
+          "cardiovascular": "Cardiovasculaire",
+          "metabolic": "Métabolique",
+          "mentalWellness": "Bien-être mental",
+          "physicalFitness": "Forme physique",
+          "nutrition": "Nutrition"
+        },
+        "systemAges": {
+          "heading": "Âges des systèmes",
+          "description": "Calculés à partir des biomarqueurs par rapport à l'âge chronologique, à l'aide d'associations de risque publiées. Une estimation de bien-être, pas un test de laboratoire distinct.",
+          "cardiovascularAge": "Âge cardiovasculaire",
+          "metabolicAge": "Âge métabolique",
+          "inflammationAge": "Âge inflammatoire"
+        },
+        "careTeam": {
+          "heading": "Votre équipe de soins",
+          "body": "Connectez-vous avec un professionnel de santé pour obtenir des conseils personnalisés.",
+          "cta": "Trouver un professionnel de santé"
+        }
+      },
+      "account": {
+        "title": "Compte",
+        "profile": {
+          "heading": "Profil",
+          "name": "Nom",
+          "email": "E-mail",
+          "accountType": "Type de compte",
+          "memberSince": "Membre depuis",
+          "notSet": "",
+          "patientFallback": "Patient"
+        },
+        "password": {
+          "heading": "Mot de passe"
+        },
+        "applications": {
+          "heading": "Vos candidatures",
+          "submitted": "Envoyée le {date}",
+          "empty": "Aucune candidature pour le moment.",
+          "cta": "Postuler pour participer"
+        },
+        "status": {
+          "new": "Envoyée",
+          "in_review": "En cours d'examen",
+          "accepted": "Acceptée",
+          "rejected": "Non retenue"
+        }
+      },
+      "carePlan": {
+        "title": "Plan de soins",
+        "subtitle": "Conseils sur l'alimentation, l'exercice et le mode de vie de vos professionnels de santé connectés.",
+        "loadError": "Impossible de charger votre plan de soins. Assurez-vous que {file} a été exécuté.",
+        "providerFallback": "Votre professionnel de santé",
+        "updated": "Mis à jour le {date}",
+        "empty": "Aucun plan de soins de ce professionnel pour le moment.",
+        "noConnections": "Aucun plan de soins pour le moment. Connectez-vous avec un professionnel de santé pour commencer.",
+        "fields": {
+          "diet_plan": "Plan alimentaire",
+          "exercise_protocol": "Protocole d'exercice",
+          "yoga": "Yoga",
+          "meditation": "Méditation",
+          "medications": "Médicaments et compléments",
+          "cautions": "Précautions",
+          "clinical_note": "Note clinique"
+        }
+      },
+      "diagnoses": {
+        "title": "Diagnostics",
+        "subtitle": "Diagnostics enregistrés par vos professionnels de santé lors des visites cliniques.",
+        "loadError": "Impossible de charger vos diagnostics. Assurez-vous que {file} a été exécuté.",
+        "empty": "Aucun diagnostic enregistré pour le moment."
+      },
+      "documents": {
+        "title": "Documents",
+        "subtitle": "Consultez et téléversez des documents liés à votre profil. Chaque document est partagé uniquement avec le professionnel de santé spécifique que vous choisissez lors du téléversement, pas automatiquement avec tous les professionnels connectés.",
+        "loadError": "Impossible de charger vos documents. Assurez-vous que {file1} et {file2} ont tous deux été exécutés (y compris le bucket de stockage).",
+        "panelTitle": "Mes documents",
+        "providerFallback": "Professionnel de santé"
+      },
+      "healthTrends": {
+        "title": "Tendances de santé",
+        "sampleTag": "Exemple",
+        "subtitle": "Tendances des biomarqueurs sur vos 6 derniers rapports de laboratoire. Aucune donnée de laboratoire réelle n'est encore connectée. Ceci est un aperçu de ce à quoi cela ressemblera une fois connecté.",
+        "biologicalAge": "Âge biologique",
+        "glucose": "Glucose",
+        "hsCrp": "hs-CRP"
+      },
+      "medicalRecords": {
+        "title": "Dossiers médicaux",
+        "subtitle": "Un résumé de votre historique de soins : visites, professionnels de santé et documents enregistrés.",
+        "visits": "Visites",
+        "providers": "Professionnels de santé",
+        "documents": "Documents",
+        "recentVisits": "Visites récentes",
+        "viewAll": "Tout voir",
+        "noVisits": "Aucune visite enregistrée pour le moment.",
+        "careTeamOnFile": "Équipe de soins enregistrée",
+        "noProviders": "Aucun professionnel de santé connecté pour le moment."
+      },
+      "messages": {
+        "title": "Messages",
+        "subtitle": "Conversations avec vos professionnels de santé connectés.",
+        "loadError": "Impossible de charger vos conversations.",
+        "providerFallback": "Professionnel de santé",
+        "newMessages": "Nouveaux messages",
+        "open": "Ouvrir",
+        "empty": "Aucune conversation pour le moment. Connectez-vous d'abord avec un professionnel de santé depuis",
+        "findProviderLink": "Trouver un professionnel de santé"
+      },
+      "messageThread": {
+        "backToAll": "Toutes les conversations",
+        "providerFallback": "Professionnel de santé"
+      },
+      "nearbyServices": {
+        "title": "Services à proximité",
+        "subtitle": "Trouvez des cliniques, diététiciens, centres de yoga et plus encore près de chez vous.",
+        "locationFound": "Position trouvée ({lat}, {lng})",
+        "categories": {
+          "clinics": "Cliniques",
+          "dietitians": "Diététiciens",
+          "yoga": "Yoga",
+          "meditation": "Méditation",
+          "gym": "Salle de sport",
+          "pharmacy": "Pharmacie"
+        },
+        "notConnected": "Pas encore connecté",
+        "shareLocationHeading": "Partagez votre position pour commencer",
+        "shareLocationBody": "Cliquez sur « Utiliser ma position » ci-dessus pour trouver {category} près de chez vous sur la carte.",
+        "mapsNotConfigured": "Maps n'est pas encore configuré. Définissez {envVar} dans votre environnement.",
+        "near": "près de chez vous",
+        "liveResults": "Résultats Google Maps en direct. Cliquez sur n'importe quel repère pour les détails, avis et itinéraires.",
+        "openInGoogleMaps": "Ouvrir dans Google Maps"
+      },
+      "providers": {
+        "title": "Trouver un professionnel de santé",
+        "subtitle": "Recherchez, filtrez et demandez une connexion.",
+        "loadError": "Impossible de charger les professionnels de santé. Assurez-vous que {file} a été exécuté.",
+        "empty": "Aucun professionnel de santé disponible pour le moment.",
+        "unknownHospital": "Hôpital inconnu"
+      },
+      "recommendations": {
+        "title": "Recommandations",
+        "subtitle": "Notes et conseils laissés par vos professionnels de santé.",
+        "loadError": "Impossible de charger vos recommandations. Assurez-vous que {file} a été exécuté.",
+        "providerFallback": "Votre professionnel de santé",
+        "empty": "Aucune recommandation pour le moment."
+      },
+      "visits": {
+        "title": "Visites et diagnostics",
+        "subtitle": "Un journal de vos visites, tel qu'enregistré par vos professionnels de santé.",
+        "loadError": "Impossible de charger votre historique de visites. Assurez-vous que {file} a été exécuté.",
+        "empty": "Aucune visite enregistrée pour le moment."
+      }
+    }
+  }
+}

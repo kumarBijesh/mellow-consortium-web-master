@@ -1,0 +1,250 @@
+{
+  "DashboardCommon": {
+    "signedInAs": "Angemeldet als",
+    "signOut": "Abmelden",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "roleLabels": {
+      "patient": "Patient",
+      "provider": "Leistungserbringer",
+      "hospital": "Krankenhaus",
+      "admin": "Administrator"
+    }
+  },
+  "AdminDashboard": {
+    "nav": {
+      "overview": "Übersicht",
+      "hospitals": "Krankenhäuser",
+      "mellowMembers": "Mellow-Mitglieder",
+      "userManagement": "Benutzerverwaltung",
+      "applications": "Anträge",
+      "dataMonitoring": "Datenüberwachung",
+      "clinicalTrials": "Klinische Studien",
+      "network": "Netzwerk",
+      "revenue": "Umsatz",
+      "cms": "CMS",
+      "auditLog": "Prüfprotokoll"
+    },
+    "stats": {
+      "projectedMrr": "Prognostizierter MRR",
+      "totalUsers": "Nutzer gesamt",
+      "hospitals": "Krankenhäuser",
+      "highRiskAlerts": "Hochrisiko-Warnungen",
+      "labReportUploads": "Laborbericht-Uploads"
+    }
+  },
+  "HospitalDashboard": {
+    "nav": {
+      "dashboard": "Krankenhaus-Dashboard",
+      "manageProviders": "Leistungserbringer verwalten",
+      "allPatients": "Alle Patienten",
+      "clinicalVisits": "Klinische Besuche",
+      "diagnoses": "Diagnosen",
+      "labReports": "Laborberichte",
+      "schedule": "Zeitplan",
+      "analytics": "Analysen",
+      "settings": "Einstellungen"
+    }
+  },
+  "ProviderDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "patients": "Patienten",
+      "labReports": "Laborberichte",
+      "requests": "Anfragen",
+      "messages": "Nachrichten",
+      "documents": "Dokumente",
+      "meeting": "Meeting",
+      "profile": "Profil"
+    }
+  },
+  "PatientDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "healthTrends": "Gesundheitstrends",
+      "medicalRecords": "Krankenakten",
+      "clinicalVisits": "Klinische Besuche",
+      "diagnoses": "Diagnosen",
+      "documents": "Dokumente",
+      "nearbyServices": "Dienste in der Nähe",
+      "recommendations": "Empfehlungen",
+      "carePlan": "Pflegeplan",
+      "myProviders": "Meine Leistungserbringer",
+      "messages": "Nachrichten",
+      "account": "Konto"
+    },
+    "pages": {
+      "home": {
+        "roleFallback": "Patient",
+        "welcomeFallback": "Willkommen",
+        "sampleTag": "Beispiel",
+        "stats": {
+          "biologicalAge": "Biologisches Alter",
+          "chronologicalAge": "Chronologisches Alter",
+          "riskLevel": "Risikostufe",
+          "riskVeryLow": "Sehr niedrig",
+          "messages": "Nachrichten"
+        },
+        "yrs": "Jahre",
+        "bioAgeCard": {
+          "heading": "Biologisches Alter",
+          "bioAgeLabel": "biologisches Alter",
+          "chronological": "Chronologisch: {age} · ",
+          "youngerBy": "{years} Jahre jünger"
+        },
+        "domainsCard": {
+          "heading": "Gesundheitsbereiche",
+          "cardiovascular": "Herz-Kreislauf",
+          "metabolic": "Stoffwechsel",
+          "mentalWellness": "Mentales Wohlbefinden",
+          "physicalFitness": "Körperliche Fitness",
+          "nutrition": "Ernährung"
+        },
+        "systemAges": {
+          "heading": "Systemalter",
+          "description": "Abgeleitet aus Biomarkern im Verhältnis zum chronologischen Alter, unter Verwendung veröffentlichter Risikoassoziationen. Eine Wellness-Schätzung, kein separater Labortest.",
+          "cardiovascularAge": "Herz-Kreislauf-Alter",
+          "metabolicAge": "Stoffwechselalter",
+          "inflammationAge": "Entzündungsalter"
+        },
+        "careTeam": {
+          "heading": "Ihr Behandlungsteam",
+          "body": "Verbinden Sie sich mit einem Leistungserbringer für persönliche Beratung.",
+          "cta": "Leistungserbringer finden"
+        }
+      },
+      "account": {
+        "title": "Konto",
+        "profile": {
+          "heading": "Profil",
+          "name": "Name",
+          "email": "E-Mail",
+          "accountType": "Kontotyp",
+          "memberSince": "Mitglied seit",
+          "notSet": "",
+          "patientFallback": "Patient"
+        },
+        "password": {
+          "heading": "Passwort"
+        },
+        "applications": {
+          "heading": "Ihre Bewerbungen",
+          "submitted": "Eingereicht am {date}",
+          "empty": "Noch keine Bewerbungen.",
+          "cta": "Jetzt bewerben"
+        },
+        "status": {
+          "new": "Eingereicht",
+          "in_review": "In Prüfung",
+          "accepted": "Angenommen",
+          "rejected": "Nicht angenommen"
+        }
+      },
+      "carePlan": {
+        "title": "Behandlungsplan",
+        "subtitle": "Ernährungs-, Bewegungs- und Lifestyle-Beratung von Ihren verbundenen Leistungserbringern.",
+        "loadError": "Ihr Behandlungsplan konnte nicht geladen werden. Stellen Sie sicher, dass {file} ausgeführt wurde.",
+        "providerFallback": "Ihr Leistungserbringer",
+        "updated": "Aktualisiert am {date}",
+        "empty": "Noch kein Behandlungsplan von diesem Leistungserbringer.",
+        "noConnections": "Noch keine Behandlungspläne. Verbinden Sie sich mit einem Leistungserbringer, um zu beginnen.",
+        "fields": {
+          "diet_plan": "Ernährungsplan",
+          "exercise_protocol": "Trainingsprotokoll",
+          "yoga": "Yoga",
+          "meditation": "Meditation",
+          "medications": "Medikamente & Nahrungsergänzungsmittel",
+          "cautions": "Vorsichtsmaßnahmen",
+          "clinical_note": "Klinische Notiz"
+        }
+      },
+      "diagnoses": {
+        "title": "Diagnosen",
+        "subtitle": "Von Ihren Leistungserbringern während klinischer Besuche erfasste Diagnosen.",
+        "loadError": "Ihre Diagnosen konnten nicht geladen werden. Stellen Sie sicher, dass {file} ausgeführt wurde.",
+        "empty": "Noch keine Diagnosen erfasst."
+      },
+      "documents": {
+        "title": "Dokumente",
+        "subtitle": "Zeigen Sie mit Ihrem Profil verknüpfte Dokumente an und laden Sie sie hoch. Jedes Dokument wird nur mit dem spezifischen Leistungserbringer geteilt, den Sie beim Hochladen auswählen, nicht automatisch mit jedem Leistungserbringer, mit dem Sie verbunden sind.",
+        "loadError": "Ihre Dokumente konnten nicht geladen werden. Stellen Sie sicher, dass sowohl {file1} als auch {file2} ausgeführt wurden (einschließlich des Speicher-Buckets).",
+        "panelTitle": "Meine Dokumente",
+        "providerFallback": "Leistungserbringer"
+      },
+      "healthTrends": {
+        "title": "Gesundheitstrends",
+        "sampleTag": "Beispiel",
+        "subtitle": "Biomarker-Trends aus Ihren letzten 6 Laborberichten. Es sind noch keine echten Labordaten verbunden. Dies ist eine Vorschau, wie es aussehen wird, sobald sie es sind.",
+        "biologicalAge": "Biologisches Alter",
+        "glucose": "Glukose",
+        "hsCrp": "hs-CRP"
+      },
+      "medicalRecords": {
+        "title": "Krankenakte",
+        "subtitle": "Eine Zusammenfassung Ihrer Behandlungshistorie: Besuche, Leistungserbringer und hinterlegte Dokumente.",
+        "visits": "Besuche",
+        "providers": "Leistungserbringer",
+        "documents": "Dokumente",
+        "recentVisits": "Letzte Besuche",
+        "viewAll": "Alle anzeigen",
+        "noVisits": "Noch keine Besuche erfasst.",
+        "careTeamOnFile": "Hinterlegtes Behandlungsteam",
+        "noProviders": "Noch keine Leistungserbringer verbunden."
+      },
+      "messages": {
+        "title": "Nachrichten",
+        "subtitle": "Unterhaltungen mit Ihren verbundenen Leistungserbringern.",
+        "loadError": "Ihre Unterhaltungen konnten nicht geladen werden.",
+        "providerFallback": "Leistungserbringer",
+        "newMessages": "Neue Nachrichten",
+        "open": "Öffnen",
+        "empty": "Noch keine Unterhaltungen. Verbinden Sie sich zunächst mit einem Leistungserbringer über",
+        "findProviderLink": "Leistungserbringer finden"
+      },
+      "messageThread": {
+        "backToAll": "Alle Unterhaltungen",
+        "providerFallback": "Leistungserbringer"
+      },
+      "nearbyServices": {
+        "title": "Dienste in der Nähe",
+        "subtitle": "Finden Sie Kliniken, Ernährungsberater, Yoga-Zentren und mehr in Ihrer Nähe.",
+        "locationFound": "Standort gefunden ({lat}, {lng})",
+        "categories": {
+          "clinics": "Kliniken",
+          "dietitians": "Ernährungsberater",
+          "yoga": "Yoga",
+          "meditation": "Meditation",
+          "gym": "Fitnessstudio",
+          "pharmacy": "Apotheke"
+        },
+        "notConnected": "Noch nicht verbunden",
+        "shareLocationHeading": "Teilen Sie Ihren Standort, um zu beginnen",
+        "shareLocationBody": "Klicken Sie oben auf „Meinen Standort verwenden“, um {category} in Ihrer Nähe auf der Karte zu finden.",
+        "mapsNotConfigured": "Maps ist noch nicht konfiguriert. Legen Sie {envVar} in Ihrer Umgebung fest.",
+        "near": "in Ihrer Nähe",
+        "liveResults": "Live-Ergebnisse von Google Maps. Klicken Sie auf eine Markierung für Details, Bewertungen und Wegbeschreibungen.",
+        "openInGoogleMaps": "In Google Maps öffnen"
+      },
+      "providers": {
+        "title": "Leistungserbringer finden",
+        "subtitle": "Suchen, filtern und eine Verbindung anfragen.",
+        "loadError": "Leistungserbringer konnten nicht geladen werden. Stellen Sie sicher, dass {file} ausgeführt wurde.",
+        "empty": "Noch keine Leistungserbringer zum Verbinden verfügbar.",
+        "unknownHospital": "Unbekanntes Krankenhaus"
+      },
+      "recommendations": {
+        "title": "Empfehlungen",
+        "subtitle": "Notizen und Hinweise Ihrer Leistungserbringer.",
+        "loadError": "Ihre Empfehlungen konnten nicht geladen werden. Stellen Sie sicher, dass {file} ausgeführt wurde.",
+        "providerFallback": "Ihr Leistungserbringer",
+        "empty": "Noch keine Empfehlungen."
+      },
+      "visits": {
+        "title": "Besuche & Diagnosen",
+        "subtitle": "Ein Verlaufsprotokoll Ihrer Besuche, wie von Ihren Leistungserbringern erfasst.",
+        "loadError": "Ihr Besuchsverlauf konnte nicht geladen werden. Stellen Sie sicher, dass {file} ausgeführt wurde.",
+        "empty": "Noch keine Besuche erfasst."
+      }
+    }
+  }
+}

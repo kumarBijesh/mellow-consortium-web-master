@@ -1,0 +1,250 @@
+{
+  "DashboardCommon": {
+    "signedInAs": "इस रूप में साइन इन किया गया",
+    "signOut": "साइन आउट करें",
+    "openMenu": "मेनू खोलें",
+    "closeMenu": "मेनू बंद करें",
+    "roleLabels": {
+      "patient": "मरीज़",
+      "provider": "प्रदाता",
+      "hospital": "अस्पताल",
+      "admin": "एडमिन"
+    }
+  },
+  "AdminDashboard": {
+    "nav": {
+      "overview": "अवलोकन",
+      "hospitals": "अस्पताल",
+      "mellowMembers": "Mellow सदस्य",
+      "userManagement": "उपयोगकर्ता प्रबंधन",
+      "applications": "आवेदन",
+      "dataMonitoring": "डेटा निगरानी",
+      "clinicalTrials": "क्लिनिकल ट्रायल",
+      "network": "नेटवर्क",
+      "revenue": "राजस्व",
+      "cms": "सीएमएस",
+      "auditLog": "ऑडिट लॉग"
+    },
+    "stats": {
+      "projectedMrr": "अनुमानित MRR",
+      "totalUsers": "कुल उपयोगकर्ता",
+      "hospitals": "अस्पताल",
+      "highRiskAlerts": "उच्च जोखिम अलर्ट",
+      "labReportUploads": "लैब रिपोर्ट अपलोड"
+    }
+  },
+  "HospitalDashboard": {
+    "nav": {
+      "dashboard": "अस्पताल डैशबोर्ड",
+      "manageProviders": "प्रदाताओं का प्रबंधन करें",
+      "allPatients": "सभी मरीज़",
+      "clinicalVisits": "क्लिनिकल विज़िट",
+      "diagnoses": "निदान",
+      "labReports": "लैब रिपोर्ट",
+      "schedule": "शेड्यूल",
+      "analytics": "एनालिटिक्स",
+      "settings": "सेटिंग्स"
+    }
+  },
+  "ProviderDashboard": {
+    "nav": {
+      "dashboard": "डैशबोर्ड",
+      "patients": "मरीज़",
+      "labReports": "लैब रिपोर्ट",
+      "requests": "अनुरोध",
+      "messages": "संदेश",
+      "documents": "दस्तावेज़",
+      "meeting": "मीटिंग",
+      "profile": "प्रोफ़ाइल"
+    }
+  },
+  "PatientDashboard": {
+    "nav": {
+      "dashboard": "डैशबोर्ड",
+      "healthTrends": "स्वास्थ्य रुझान",
+      "medicalRecords": "मेडिकल रिकॉर्ड",
+      "clinicalVisits": "क्लिनिकल विज़िट",
+      "diagnoses": "निदान",
+      "documents": "दस्तावेज़",
+      "nearbyServices": "नज़दीकी सेवाएं",
+      "recommendations": "सिफारिशें",
+      "carePlan": "केयर प्लान",
+      "myProviders": "मेरे प्रदाता",
+      "messages": "संदेश",
+      "account": "खाता"
+    },
+    "pages": {
+      "home": {
+        "roleFallback": "मरीज़",
+        "welcomeFallback": "स्वागत है",
+        "sampleTag": "नमूना",
+        "stats": {
+          "biologicalAge": "जैविक आयु",
+          "chronologicalAge": "कालानुक्रमिक आयु",
+          "riskLevel": "जोखिम स्तर",
+          "riskVeryLow": "बहुत कम",
+          "messages": "संदेश"
+        },
+        "yrs": "वर्ष",
+        "bioAgeCard": {
+          "heading": "जैविक आयु",
+          "bioAgeLabel": "जैविक आयु",
+          "chronological": "कालानुक्रमिक: {age} · ",
+          "youngerBy": "{years} वर्ष छोटी"
+        },
+        "domainsCard": {
+          "heading": "स्वास्थ्य डोमेन",
+          "cardiovascular": "हृदय संबंधी",
+          "metabolic": "चयापचय",
+          "mentalWellness": "मानसिक स्वास्थ्य",
+          "physicalFitness": "शारीरिक फिटनेस",
+          "nutrition": "पोषण"
+        },
+        "systemAges": {
+          "heading": "सिस्टम आयु",
+          "description": "प्रकाशित जोखिम संबंधों का उपयोग करते हुए, कालानुक्रमिक आयु के सापेक्ष बायोमार्करों से प्राप्त। एक वेलनेस अनुमान, अलग लैब टेस्ट नहीं।",
+          "cardiovascularAge": "हृदय संबंधी आयु",
+          "metabolicAge": "चयापचय आयु",
+          "inflammationAge": "सूजन आयु"
+        },
+        "careTeam": {
+          "heading": "आपकी देखभाल टीम",
+          "body": "व्यक्तिगत मार्गदर्शन पाने के लिए एक प्रदाता से जुड़ें।",
+          "cta": "प्रदाता खोजें"
+        }
+      },
+      "account": {
+        "title": "खाता",
+        "profile": {
+          "heading": "प्रोफ़ाइल",
+          "name": "नाम",
+          "email": "ईमेल",
+          "accountType": "खाता प्रकार",
+          "memberSince": "सदस्य बने",
+          "notSet": "",
+          "patientFallback": "मरीज़"
+        },
+        "password": {
+          "heading": "पासवर्ड"
+        },
+        "applications": {
+          "heading": "आपके आवेदन",
+          "submitted": "{date} को सबमिट किया गया",
+          "empty": "अभी तक कोई आवेदन नहीं।",
+          "cta": "शामिल होने के लिए आवेदन करें"
+        },
+        "status": {
+          "new": "सबमिट किया गया",
+          "in_review": "समीक्षा में",
+          "accepted": "स्वीकृत",
+          "rejected": "स्वीकार नहीं किया गया"
+        }
+      },
+      "carePlan": {
+        "title": "केयर प्लान",
+        "subtitle": "आपके जुड़े हुए प्रदाताओं से आहार, व्यायाम और जीवनशैली मार्गदर्शन।",
+        "loadError": "आपका केयर प्लान लोड नहीं हो सका। सुनिश्चित करें कि {file} चलाया गया है।",
+        "providerFallback": "आपका प्रदाता",
+        "updated": "{date} को अपडेट किया गया",
+        "empty": "इस प्रदाता से अभी तक कोई केयर प्लान नहीं।",
+        "noConnections": "अभी तक कोई केयर प्लान नहीं। शुरू करने के लिए किसी प्रदाता से जुड़ें।",
+        "fields": {
+          "diet_plan": "आहार योजना",
+          "exercise_protocol": "व्यायाम प्रोटोकॉल",
+          "yoga": "योग",
+          "meditation": "ध्यान",
+          "medications": "दवाएं और सप्लीमेंट",
+          "cautions": "सावधानियां",
+          "clinical_note": "क्लिनिकल नोट"
+        }
+      },
+      "diagnoses": {
+        "title": "निदान",
+        "subtitle": "क्लिनिकल विज़िट के दौरान आपके प्रदाताओं द्वारा दर्ज किए गए निदान।",
+        "loadError": "आपके निदान लोड नहीं हो सके। सुनिश्चित करें कि {file} चलाया गया है।",
+        "empty": "अभी तक कोई निदान दर्ज नहीं किया गया।"
+      },
+      "documents": {
+        "title": "दस्तावेज़",
+        "subtitle": "अपनी प्रोफ़ाइल से जुड़े दस्तावेज़ देखें और अपलोड करें। प्रत्येक दस्तावेज़ केवल अपलोड करते समय आपके द्वारा चुने गए विशिष्ट प्रदाता के साथ साझा किया जाता है, आप जिन सभी प्रदाताओं से जुड़े हैं उन सभी के साथ स्वचालित रूप से नहीं।",
+        "loadError": "आपके दस्तावेज़ लोड नहीं हो सके। सुनिश्चित करें कि {file1} और {file2} दोनों चलाए गए हैं (स्टोरेज बकेट सहित)।",
+        "panelTitle": "मेरे दस्तावेज़",
+        "providerFallback": "प्रदाता"
+      },
+      "healthTrends": {
+        "title": "स्वास्थ्य रुझान",
+        "sampleTag": "नमूना",
+        "subtitle": "आपकी पिछली 6 लैब रिपोर्ट में बायोमार्कर रुझान। अभी तक कोई वास्तविक लैब डेटा कनेक्ट नहीं है। यह एक बार जुड़ने पर यह कैसा दिखेगा इसका पूर्वावलोकन है।",
+        "biologicalAge": "जैविक आयु",
+        "glucose": "ग्लूकोज",
+        "hsCrp": "hs-CRP"
+      },
+      "medicalRecords": {
+        "title": "मेडिकल रिकॉर्ड",
+        "subtitle": "आपके देखभाल इतिहास का सारांश: विज़िट, प्रदाता, और फ़ाइल पर मौजूद दस्तावेज़।",
+        "visits": "विज़िट",
+        "providers": "प्रदाता",
+        "documents": "दस्तावेज़",
+        "recentVisits": "हाल की विज़िट",
+        "viewAll": "सभी देखें",
+        "noVisits": "अभी तक कोई विज़िट दर्ज नहीं की गई।",
+        "careTeamOnFile": "फ़ाइल पर देखभाल टीम",
+        "noProviders": "अभी तक कोई प्रदाता जुड़ा नहीं है।"
+      },
+      "messages": {
+        "title": "संदेश",
+        "subtitle": "आपके जुड़े हुए प्रदाताओं के साथ बातचीत।",
+        "loadError": "आपकी बातचीत लोड नहीं हो सकी।",
+        "providerFallback": "प्रदाता",
+        "newMessages": "नए संदेश",
+        "open": "खोलें",
+        "empty": "अभी तक कोई बातचीत नहीं। पहले किसी प्रदाता से जुड़ें",
+        "findProviderLink": "प्रदाता खोजें"
+      },
+      "messageThread": {
+        "backToAll": "सभी बातचीत",
+        "providerFallback": "प्रदाता"
+      },
+      "nearbyServices": {
+        "title": "आस-पास की सेवाएं",
+        "subtitle": "अपने पास क्लीनिक, आहार विशेषज्ञ, योग केंद्र, और बहुत कुछ खोजें।",
+        "locationFound": "स्थान मिला ({lat}, {lng})",
+        "categories": {
+          "clinics": "क्लीनिक",
+          "dietitians": "आहार विशेषज्ञ",
+          "yoga": "योग",
+          "meditation": "ध्यान",
+          "gym": "जिम",
+          "pharmacy": "फार्मेसी"
+        },
+        "notConnected": "अभी तक कनेक्ट नहीं है",
+        "shareLocationHeading": "शुरू करने के लिए अपना स्थान साझा करें",
+        "shareLocationBody": "मानचित्र पर अपने पास {category} खोजने के लिए ऊपर \"मेरा स्थान उपयोग करें\" पर क्लिक करें।",
+        "mapsNotConfigured": "मैप्स अभी तक कॉन्फ़िगर नहीं किया गया है। अपने वातावरण में {envVar} सेट करें।",
+        "near": "आपके पास",
+        "liveResults": "लाइव Google मानचित्र परिणाम। विवरण, समीक्षाओं और दिशाओं के लिए किसी भी पिन पर क्लिक करें।",
+        "openInGoogleMaps": "Google मानचित्र में खोलें"
+      },
+      "providers": {
+        "title": "प्रदाता खोजें",
+        "subtitle": "खोजें, फ़िल्टर करें, और कनेक्शन का अनुरोध करें।",
+        "loadError": "प्रदाता लोड नहीं हो सके। सुनिश्चित करें कि {file} चलाया गया है।",
+        "empty": "अभी तक जुड़ने के लिए कोई प्रदाता उपलब्ध नहीं है।",
+        "unknownHospital": "अज्ञात अस्पताल"
+      },
+      "recommendations": {
+        "title": "सिफारिशें",
+        "subtitle": "आपके प्रदाताओं द्वारा छोड़े गए नोट्स और मार्गदर्शन।",
+        "loadError": "आपकी सिफारिशें लोड नहीं हो सकीं। सुनिश्चित करें कि {file} चलाया गया है।",
+        "providerFallback": "आपका प्रदाता",
+        "empty": "अभी तक कोई सिफारिश नहीं।"
+      },
+      "visits": {
+        "title": "विज़िट और निदान",
+        "subtitle": "आपके प्रदाताओं द्वारा दर्ज की गई आपकी विज़िट का इतिहास लॉग।",
+        "loadError": "आपका विज़िट इतिहास लोड नहीं हो सका। सुनिश्चित करें कि {file} चलाया गया है।",
+        "empty": "अभी तक कोई विज़िट दर्ज नहीं की गई।"
+      }
+    }
+  }
+}
