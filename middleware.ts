@@ -30,29 +30,45 @@ export async function middleware(request: NextRequest) {
   // locale rewrite/cookie that intlMiddleware already set on it.
   const response = intlResponse;
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value;
-        },
-        set(name: string, value: string, options: CookieOptions) {
-          response.cookies.set({ name, value, ...options });
-        },
-        remove(name: string, options: CookieOptions) {
-          response.cookies.set({ name, value: "", ...options });
-        },
-      },
-    }
-  );
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  // getUser() (not getSession()) so the token is validated against Supabase,
-  // not just read from the cookie.
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn("Middleware: NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY is missing. Add them to your deployment environment variables.");
+    return response;
+  }
+
+  let user = null;
+  let supabase = null;
+
+  try {
+    supabase = createServerClient(
+      supabaseUrl,
+      supabaseAnonKey,
+      {
+        cookies: {
+          get(name: string) {
+            return request.cookies.get(name)?.value;
+          },
+          set(name: string, value: string, options: CookieOptions) {
+            response.cookies.set({ name, value, ...options });
+          },
+          remove(name: string, options: CookieOptions) {
+            response.cookies.set({ name, value: "", ...options });
+          },
+        },
+      }
+    );
+
+    // getUser() (not getSession()) so the token is validated against Supabase,
+    // not just read from the cookie.
+    const {
+      data: { user: authUser },
+    } = await supabase.auth.getUser();
+    user = authUser;
+  } catch (err) {
+    console.error("Middleware auth check error:", err);
+  }
 
   const redirectTo = (path: string) => NextResponse.redirect(new URL(`/${locale}${path}`, request.url));
 
@@ -77,13 +93,17 @@ export async function middleware(request: NextRequest) {
     if (!user && !isPublicAdminPage) {
       return redirectTo("/admin/login");
     }
-    if (user) {
-      const { data: admin } = await supabase.from("admins").select("user_id").eq("user_id", user.id).maybeSingle();
-      if (!admin && !isPublicAdminPage) {
-        return redirectTo("/admin/login");
-      }
-      if (admin && isLoginPage) {
-        return redirectTo("/admin");
+    if (user && supabase) {
+      try {
+        const { data: admin } = await supabase.from("admins").select("user_id").eq("user_id", user.id).maybeSingle();
+        if (!admin && !isPublicAdminPage) {
+          return redirectTo("/admin/login");
+        }
+        if (admin && isLoginPage) {
+          return redirectTo("/admin");
+        }
+      } catch (err) {
+        console.error("Admin check failed in middleware:", err);
       }
     }
     return response;
@@ -99,13 +119,17 @@ export async function middleware(request: NextRequest) {
     if (!user && !isHospitalLoginPage) {
       return redirectTo("/hospital/login");
     }
-    if (user) {
-      const { data: hospital } = await supabase.from("hospitals").select("user_id").eq("user_id", user.id).maybeSingle();
-      if (!hospital && !isHospitalLoginPage) {
-        return redirectTo("/hospital/login");
-      }
-      if (hospital && isHospitalLoginPage) {
-        return redirectTo("/hospital");
+    if (user && supabase) {
+      try {
+        const { data: hospital } = await supabase.from("hospitals").select("user_id").eq("user_id", user.id).maybeSingle();
+        if (!hospital && !isHospitalLoginPage) {
+          return redirectTo("/hospital/login");
+        }
+        if (hospital && isHospitalLoginPage) {
+          return redirectTo("/hospital");
+        }
+      } catch (err) {
+        console.error("Hospital check failed in middleware:", err);
       }
     }
     return response;
@@ -121,17 +145,21 @@ export async function middleware(request: NextRequest) {
     if (!user && !isProviderLoginPage) {
       return redirectTo("/provider/login");
     }
-    if (user) {
-      const { data: provider } = await supabase
-        .from("provider_profiles")
-        .select("provider_user_id")
-        .eq("provider_user_id", user.id)
-        .maybeSingle();
-      if (!provider && !isProviderLoginPage) {
-        return redirectTo("/provider/login");
-      }
-      if (provider && isProviderLoginPage) {
-        return redirectTo("/provider");
+    if (user && supabase) {
+      try {
+        const { data: provider } = await supabase
+          .from("provider_profiles")
+          .select("provider_user_id")
+          .eq("provider_user_id", user.id)
+          .maybeSingle();
+        if (!provider && !isProviderLoginPage) {
+          return redirectTo("/provider/login");
+        }
+        if (provider && isProviderLoginPage) {
+          return redirectTo("/provider");
+        }
+      } catch (err) {
+        console.error("Provider check failed in middleware:", err);
       }
     }
     return response;
