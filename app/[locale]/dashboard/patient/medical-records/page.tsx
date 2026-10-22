@@ -1,15 +1,13 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
 export default async function MedicalRecordsPage() {
   const t = await getTranslations("PatientDashboard.pages.medicalRecords");
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const [{ data: visits }, { count: documentsCount }, { data: connections }] = user
     ? await Promise.all([

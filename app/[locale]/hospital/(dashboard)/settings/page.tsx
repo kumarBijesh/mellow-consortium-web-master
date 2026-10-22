@@ -1,13 +1,11 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import ChangePasswordForm from "@/components/hospital/ChangePasswordForm";
 
 export const dynamic = "force-dynamic";
 
 export default async function HospitalSettingsPage() {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: hospital } = await supabase
     .from("hospitals")

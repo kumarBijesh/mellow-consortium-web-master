@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
@@ -9,7 +10,7 @@ export const revalidate = 300;
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-async function getInstitution(id: string) {
+const getInstitution = cache(async (id: string) => {
   // A malformed id would make Postgres throw on the uuid cast; treat it as not found.
   if (!UUID_RE.test(id)) return null;
   const supabase = createClient();
@@ -19,7 +20,7 @@ async function getInstitution(id: string) {
     .eq("id", id)
     .maybeSingle();
   return data;
-}
+});
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const institution = await getInstitution(params.id);

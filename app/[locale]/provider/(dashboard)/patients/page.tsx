@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import InvitePatientButton from "@/components/provider/InvitePatientButton";
 
 export const dynamic = "force-dynamic";
@@ -10,9 +10,7 @@ export default async function ProviderPatientsPage({
   searchParams: { q?: string };
 }) {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
   const q = searchParams.q?.trim().toLowerCase();
 
   const { data: provider } = await supabase

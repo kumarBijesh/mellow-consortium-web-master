@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import SignOutButton from "@/components/admin/SignOutButton";
 import AdminNavLink from "@/components/admin/AdminNavLink";
 import ThemeToggle from "@/components/theme/ThemeToggle";
@@ -20,15 +20,9 @@ import {
 } from "@/components/admin/AdminIcons";
 
 export default async function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
-  const supabase = createClient();
   const t = await getTranslations("AdminDashboard");
   const tCommon = await getTranslations("DashboardCommon");
-  const [
-    {
-      data: { user },
-    },
-    stats,
-  ] = await Promise.all([supabase.auth.getUser(), getAdminStats()]);
+  const [user, stats] = await Promise.all([getCurrentUser(), getAdminStats()]);
 
   return (
     <div className="adm-shell flex">

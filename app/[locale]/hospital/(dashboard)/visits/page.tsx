@@ -1,4 +1,5 @@
-import { createClient } from "@/lib/supabase/server";
+import { Link } from "@/i18n/navigation";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
@@ -17,9 +18,7 @@ export default async function HospitalVisitsPage({
   searchParams: { q?: string; provider?: string; from?: string; to?: string };
 }) {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
   const { q, provider: providerFilter, from, to } = searchParams;
 
   const { data: hospital } = await supabase.from("hospitals").select("id").eq("user_id", user?.id ?? "").maybeSingle();
@@ -110,9 +109,9 @@ export default async function HospitalVisitsPage({
             <button type="submit" className="btn-primary !px-4 !py-2.5 text-[13.5px]">
               Apply filters
             </button>
-            <a href="/hospital/visits" className="btn-secondary !px-4 !py-2.5 text-[13.5px]">
+            <Link href="/hospital/visits" className="btn-secondary !px-4 !py-2.5 text-[13.5px]">
               Clear
-            </a>
+            </Link>
           </div>
         </form>
       </div>

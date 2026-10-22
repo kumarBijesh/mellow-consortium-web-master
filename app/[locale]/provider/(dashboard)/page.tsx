@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
@@ -19,9 +19,7 @@ const RISK_STYLES: Record<string, string> = {
 
 export default async function ProviderDashboardPage() {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: provider } = await supabase
     .from("provider_profiles")

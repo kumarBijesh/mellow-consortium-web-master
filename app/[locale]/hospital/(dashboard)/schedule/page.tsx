@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import ScheduleGrid from "@/components/hospital/ScheduleGrid";
 
 export const dynamic = "force-dynamic";
@@ -30,9 +30,7 @@ export default async function HospitalSchedulePage({
   searchParams: { provider?: string; week?: string };
 }) {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: hospital } = await supabase.from("hospitals").select("id").eq("user_id", user?.id ?? "").maybeSingle();
 

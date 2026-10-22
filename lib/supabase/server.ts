@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { cache } from "react";
 
 // Server-side client for Server Components, Server Actions, and Route
 // Handlers. Reads/writes auth cookies so RLS-protected calls work.
@@ -33,3 +34,17 @@ export function createClient() {
     }
   );
 }
+
+// React cache() deduplicates getCurrentUser() calls within the same request lifecycle
+// (e.g. across Layout and Page components), eliminating redundant Supabase Auth roundtrips.
+export const getCurrentUser = cache(async () => {
+  const supabase = createClient();
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    return user;
+  } catch {
+    return null;
+  }
+});

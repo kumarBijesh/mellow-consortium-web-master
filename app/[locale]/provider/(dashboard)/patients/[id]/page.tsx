@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import MessageThread from "@/components/messaging/MessageThread";
 import RecommendationsPanel from "@/components/provider/RecommendationsPanel";
 import VisitsPanel from "@/components/provider/VisitsPanel";
@@ -12,9 +12,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ProviderPatientDetailPage({ params }: { params: { id: string } }) {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: connection } = await supabase
     .from("patient_provider_connections")

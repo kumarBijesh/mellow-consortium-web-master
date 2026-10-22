@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import SignOutButton from "@/components/provider/SignOutButton";
 import ProviderNavLink from "@/components/provider/ProviderNavLink";
 import ThemeToggle from "@/components/theme/ThemeToggle";
@@ -18,9 +18,7 @@ import {
 
 export default async function ProviderDashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   let unreadConversations = 0;
   if (user) {

@@ -1,3 +1,5 @@
+import { Link } from "@/i18n/navigation";
+
 const DIVISION_NAMES: Record<string, string> = {
   age: "MELLOW-Age",
   jlive: "JLIVE",
@@ -24,12 +26,12 @@ export default function ComingSoonPage({
           explore active trials or apply to get involved.
         </p>
         <div className="flex gap-3 justify-center">
-          <a href="/trials" className="btn-secondary">
+          <Link href="/trials" className="btn-secondary">
             View trials
-          </a>
-          <a href="/apply/individual" className="btn-primary">
+          </Link>
+          <Link href="/apply/individual" className="btn-primary">
             Apply
-          </a>
+          </Link>
         </div>
       </div>
     </main>

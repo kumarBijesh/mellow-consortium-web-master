@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import ProviderDirectory, { type DirectoryProvider } from "@/components/patient/ProviderDirectory";
 
 export const dynamic = "force-dynamic";
@@ -7,9 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function FindProviderPage() {
   const t = await getTranslations("PatientDashboard.pages.providers");
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const [{ data: providers, error }, { data: connections }] = await Promise.all([
     supabase

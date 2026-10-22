@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
@@ -8,7 +9,7 @@ export const revalidate = 300;
 // `*` rather than a column list so the page keeps working whether or not
 // trials-location-enroll.sql has been applied yet (location/enroll_url
 // just come back undefined before it has).
-async function getTrial(slug: string) {
+const getTrial = cache(async (slug: string) => {
   const supabase = createClient();
   const { data } = await supabase
     .from("trials")
@@ -22,7 +23,7 @@ async function getTrial(slug: string) {
     .maybeSingle();
 
   return data;
-}
+});
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const trial = await getTrial(params.slug);

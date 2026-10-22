@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import CreateProviderForm from "@/components/hospital/CreateProviderForm";
 import CreateLocationForm from "@/components/hospital/CreateLocationForm";
 import LocationActions from "@/components/hospital/LocationActions";
@@ -8,9 +8,7 @@ export const dynamic = "force-dynamic";
 
 export default async function HospitalProvidersPage() {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: hospital } = await supabase.from("hospitals").select("id, phone, admin_email").eq("user_id", user?.id ?? "").maybeSingle();
 

@@ -1,13 +1,11 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import RequestActions from "@/components/provider/RequestActions";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProviderRequestsPage() {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: provider } = await supabase
     .from("provider_profiles")

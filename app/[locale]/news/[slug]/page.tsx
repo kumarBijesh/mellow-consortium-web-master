@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import { isRenderableImageUrl } from "@/lib/image-url";
 
 export const revalidate = 300;
 
-async function getPost(slug: string) {
+const getPost = cache(async (slug: string) => {
   const supabase = createClient();
   const { data } = await supabase
     .from("news_posts")
@@ -16,7 +17,7 @@ async function getPost(slug: string) {
     .maybeSingle();
 
   return data;
-}
+});
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);

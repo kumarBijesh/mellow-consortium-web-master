@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getLocale } from "next-intl/server";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 
 // Not a page itself — routes a signed-in visitor to the dashboard that
 // matches them. Staff (present in the `admins` allow-list, see
@@ -20,10 +20,7 @@ import { createClient } from "@/lib/supabase/server";
 export default async function DashboardRouterPage() {
   const supabase = createClient();
   const locale = await getLocale();
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   if (user) {
     const { data: admin } = await supabase.from("admins").select("user_id").eq("user_id", user.id).maybeSingle();

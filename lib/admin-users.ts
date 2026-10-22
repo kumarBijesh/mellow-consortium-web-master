@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import { createClient } from "@/lib/supabase/server";
 
 export type UnifiedUser = {
@@ -11,7 +12,7 @@ export type UnifiedUser = {
   hospitalName?: string;
 };
 
-export async function getUnifiedUsers(): Promise<{
+export const getUnifiedUsers = cache(async function getUnifiedUsers(): Promise<{
   users: UnifiedUser[];
   error: { code?: string; message: string } | null;
 }> {
@@ -59,4 +60,4 @@ export async function getUnifiedUsers(): Promise<{
   );
 
   return { users, error };
-}
+});

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import ChangePasswordForm from "@/components/patient/ChangePasswordForm";
 
 export const dynamic = "force-dynamic";
@@ -15,9 +15,7 @@ const STATUS_COLORS: Record<string, string> = {
 export default async function PatientAccountPage() {
   const t = await getTranslations("PatientDashboard.pages.account");
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const [{ data: profile }, { data: applications }] = user
     ? await Promise.all([

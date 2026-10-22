@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
@@ -12,17 +13,21 @@ export const dynamic = "force-dynamic";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+const getEvent = cache(async (slug: string) => {
   const supabase = createClient();
-  const { data: event } = await supabase.from("events").select("title").eq("slug", params.slug).maybeSingle();
+  const { data: event } = await supabase.from("events").select("*").eq("slug", slug).maybeSingle();
+  return event;
+});
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const event = await getEvent(params.slug);
   return { title: event?.title ?? "Event" };
 }
 
 export default async function EventDetailPage({ params }: { params: { slug: string } }) {
   const t = await getTranslations("Conferences");
   const locale = await getLocale();
-  const supabase = createClient();
-  const { data: event } = await supabase.from("events").select("*").eq("slug", params.slug).maybeSingle();
+  const event = await getEvent(params.slug);
   if (!event) notFound();
 
   const badge = formatEventDateBadge(event.start_date, event.end_date, locale);

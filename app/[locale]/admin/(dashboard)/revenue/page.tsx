@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/navigation";
 import { getAdminStats, PRICING } from "@/lib/admin-stats";
 
 export const dynamic = "force-dynamic";
@@ -30,9 +31,9 @@ export default async function RevenuePage() {
           <b>No payment integration active.</b> The figures below are <b>projections only</b>, based on current account
           counts × a placeholder pricing model. Connect Stripe or another payment provider to track real revenue.
         </p>
-        <a href="/coming-soon?from=payments" className="adm-btn-primary inline-flex mt-4">
+        <Link href="/coming-soon?from=payments" className="adm-btn-primary inline-flex mt-4">
           Connect payment provider
-        </a>
+        </Link>
       </div>
 
       <p className="text-[11px] uppercase tracking-[0.08em] text-muted dark:text-white/35 mb-3">Projected monthly recurring revenue</p>

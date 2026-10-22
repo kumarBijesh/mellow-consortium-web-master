@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
+import { getPatientUnreadConversations } from "@/lib/patient-data";
 
 export const dynamic = "force-dynamic";
 
@@ -40,26 +41,14 @@ function domainColor(value: number) {
 export default async function PatientDashboardPage() {
   const t = await getTranslations("PatientDashboard.pages.home");
   const supabase = createClient();
+  const user = await getCurrentUser();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  const [{ data: profile }, { count: activeConversations }, { count: connectedProviders }] = user
+  const [{ data: profile }, unreadMessagesCount] = user
     ? await Promise.all([
         supabase.from("profiles").select("full_name, email, role").eq("id", user.id).maybeSingle(),
-        supabase
-          .from("patient_provider_connections")
-          .select("id", { count: "exact", head: true })
-          .eq("patient_id", user.id)
-          .eq("status", "ACTIVE"),
-        supabase
-          .from("patient_provider_connections")
-          .select("id", { count: "exact", head: true })
-          .eq("patient_id", user.id)
-          .eq("status", "ACTIVE"),
+        getPatientUnreadConversations(user.id),
       ])
-    : [{ data: null }, { count: 0 }, { count: 0 }];
+    : [{ data: null }, 0];
 
   const fullName = profile?.full_name || (user?.user_metadata as { full_name?: string } | undefined)?.full_name;
   const bioAgeDelta = (SAMPLE_CHRONO_AGE - SAMPLE_BIO_AGE).toFixed(1);
@@ -103,7 +92,7 @@ export default async function PatientDashboardPage() {
         </div>
         <div className="rounded-card stat-accent-gold border border-line dark:border-white/10 bg-white dark:bg-white/[0.03] p-5">
           <p className="text-[11px] uppercase tracking-[0.08em] text-muted dark:text-white/50 mb-2">{t("stats.messages")}</p>
-          <p className="text-[26px] font-display font-bold text-[#8a6a12] dark:text-gold">{activeConversations ?? 0}</p>
+          <p className="text-[26px] font-display font-bold text-[#8a6a12] dark:text-gold">{unreadMessagesCount}</p>
         </div>
       </div>
 
@@ -119,7 +108,7 @@ export default async function PatientDashboardPage() {
           <div className="p-6">
             <div
               className="w-[140px] h-[140px] rounded-full mx-auto mb-2 grid place-items-center relative"
-              style={{ background: `conic-gradient(#15A8A0 0 ${(SAMPLE_BIO_AGE / SAMPLE_CHRONO_AGE) * 100}%, #e6eef2 0 100%)` }}
+              style={{ background: `conic-gradient(#15A8A0 0 ${(SAMPLE_BIO_AGE / SAMPLE_CHRONO_AGE) * 100}%, rgba(120, 140, 160, 0.18) 0 100%)` }}
             >
               <div className="absolute inset-3 rounded-full bg-white dark:bg-[#12171f]" />
               <div className="relative text-center">

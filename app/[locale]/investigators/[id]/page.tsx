@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
@@ -13,7 +14,7 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
 type InstitutionRef = { id: string; name: string; country: string; region: string | null } | null;
 
-async function getInvestigator(id: string) {
+const getInvestigator = cache(async (id: string) => {
   if (!UUID_RE.test(id)) return null;
   const supabase = createClient();
   const { data } = await supabase
@@ -22,7 +23,7 @@ async function getInvestigator(id: string) {
     .eq("id", id)
     .maybeSingle();
   return data;
-}
+});
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const inv = await getInvestigator(params.id);

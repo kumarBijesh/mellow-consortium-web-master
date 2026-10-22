@@ -1,13 +1,11 @@
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import EditProfileForm from "@/components/provider/EditProfileForm";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProviderProfilePage() {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: provider, error } = await supabase
     .from("provider_profiles")

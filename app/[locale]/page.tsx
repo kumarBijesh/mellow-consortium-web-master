@@ -51,6 +51,8 @@ const WHY_POINTS = [
   },
 ];
 
+export const revalidate = 60;
+
 export default async function HomePage() {
   const supabase = createClient();
   const t = await getTranslations("Home");

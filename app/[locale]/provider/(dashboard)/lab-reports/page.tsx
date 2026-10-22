@@ -1,14 +1,12 @@
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import BiomarkerReportsPanel from "@/components/provider/BiomarkerReportsPanel";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProviderLabReportsPage({ searchParams }: { searchParams: { connection?: string } }) {
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: provider } = await supabase
     .from("provider_profiles")

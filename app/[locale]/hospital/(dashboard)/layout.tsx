@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import SignOutButton from "@/components/hospital/SignOutButton";
 import HospitalNavLink from "@/components/hospital/HospitalNavLink";
 import ThemeToggle from "@/components/theme/ThemeToggle";
@@ -18,12 +18,9 @@ import {
 } from "@/components/hospital/HospitalIcons";
 
 export default async function HospitalDashboardLayout({ children }: { children: React.ReactNode }) {
-  const supabase = createClient();
   const t = await getTranslations("HospitalDashboard");
   const tCommon = await getTranslations("DashboardCommon");
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   return (
     <div className="min-h-screen flex bg-white dark:bg-darkbg">

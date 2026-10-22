@@ -47,7 +47,7 @@ export default async function LocaleLayout({
   const dir = LOCALE_META[locale as AppLocale].dir;
 
   return (
-    <html lang={locale} dir={dir}>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

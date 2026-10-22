@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import UseLocationButton from "@/components/patient/UseLocationButton";
@@ -20,11 +21,11 @@ const CATEGORIES: { key: string; icon: string; query: string }[] = [
 // matches. Reverse-geocoding to a real locality name first and building
 // "{category} in {locality}" is what actually produces the pinned,
 // labeled results the design calls for.
-async function resolveLocality(lat: number, lng: number, apiKey: string): Promise<string | null> {
+const resolveLocality = cache(async function resolveLocality(lat: number, lng: number, apiKey: string): Promise<string | null> {
   try {
     const res = await fetch(
       `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`,
-      { cache: "no-store" }
+      { next: { revalidate: 86400 } }
     );
     const data = await res.json();
     if (data.status !== "OK" || !data.results?.length) return null;
@@ -34,7 +35,7 @@ async function resolveLocality(lat: number, lng: number, apiKey: string): Promis
   } catch {
     return null;
   }
-}
+});
 
 export default async function NearbyServicesPage({
   searchParams,

@@ -30,6 +30,53 @@ export async function middleware(request: NextRequest) {
   // locale rewrite/cookie that intlMiddleware already set on it.
   const response = intlResponse;
 
+  const isAdminRoute = pathnameWithoutLocale.startsWith("/admin");
+  const isHospitalRoute = pathnameWithoutLocale.startsWith("/hospital");
+  const isProviderRoute = pathnameWithoutLocale.startsWith("/provider");
+  const isPatientRoute = pathnameWithoutLocale.startsWith("/dashboard");
+  const isAuthPage =
+    pathnameWithoutLocale === "/signin" ||
+    pathnameWithoutLocale === "/signup" ||
+    pathnameWithoutLocale === "/access";
+  const isProtectedOrAuthRoute =
+    isAdminRoute || isHospitalRoute || isProviderRoute || isPatientRoute || isAuthPage;
+
+  // FAST PATH: Public marketing/content pages do not require auth gating or session checks.
+  // Returning immediately avoids 150-500ms of unnecessary Supabase network latency on every page request & link prefetch.
+  if (!isProtectedOrAuthRoute) {
+    return response;
+  }
+
+  const redirectTo = (path: string) => NextResponse.redirect(new URL(`/${locale}${path}`, request.url));
+
+  // Check if a Supabase auth token cookie is present.
+  const hasAuthCookie = request.cookies
+    .getAll()
+    .some((c) => c.name.startsWith("sb-") && c.name.includes("-auth-token"));
+
+  // FAST PATH: If there is no auth cookie, the user is definitely unauthenticated.
+  if (!hasAuthCookie) {
+    if (isPatientRoute) {
+      return redirectTo("/signin");
+    }
+    if (isHospitalRoute && pathnameWithoutLocale !== "/hospital/login") {
+      return redirectTo("/hospital/login");
+    }
+    if (isProviderRoute && pathnameWithoutLocale !== "/provider/login") {
+      return redirectTo("/provider/login");
+    }
+    if (isAdminRoute) {
+      const isPublicAdminPage =
+        pathnameWithoutLocale === "/admin/login" ||
+        pathnameWithoutLocale === "/admin/forgot-password" ||
+        pathnameWithoutLocale === "/admin/reset-password";
+      if (!isPublicAdminPage) {
+        return redirectTo("/admin/login");
+      }
+    }
+    return response;
+  }
+
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -60,8 +107,6 @@ export async function middleware(request: NextRequest) {
       }
     );
 
-    // getUser() (not getSession()) so the token is validated against Supabase,
-    // not just read from the cookie.
     const {
       data: { user: authUser },
     } = await supabase.auth.getUser();
@@ -70,26 +115,15 @@ export async function middleware(request: NextRequest) {
     console.error("Middleware auth check error:", err);
   }
 
-  const redirectTo = (path: string) => NextResponse.redirect(new URL(`/${locale}${path}`, request.url));
-
   // Staff admin panel — separate from visitor accounts, gated by the
   // `admins` allow-list at the RLS level (see supabase/admin.sql).
-  //
-  // Being logged in is NOT being an admin — a patient/hospital/provider
-  // session is still "user truthy", so beyond the login-page redirect we
-  // must also confirm this specific user is actually in `admins` before
-  // letting them past. Without this check, any signed-in account of any
-  // role could load /admin/* directly (the pages themselves fetch with
-  // the service-role client and don't re-check the caller's role,
-  // trusting this middleware to have already gated access).
-  if (pathnameWithoutLocale.startsWith("/admin")) {
+  if (isAdminRoute) {
     const isLoginPage = pathnameWithoutLocale === "/admin/login";
-    // forgot-password/reset-password must stay reachable while signed
-    // out — reset-password in particular arrives via a hash-fragment
-    // token (#access_token=...) that the browser never sends to the
-    // server, so there's no cookie-based session for middleware to see
-    // yet at this point; the client-side page exchanges it after load.
-    const isPublicAdminPage = isLoginPage || pathnameWithoutLocale === "/admin/forgot-password" || pathnameWithoutLocale === "/admin/reset-password";
+    const isPublicAdminPage =
+      isLoginPage ||
+      pathnameWithoutLocale === "/admin/forgot-password" ||
+      pathnameWithoutLocale === "/admin/reset-password";
+
     if (!user && !isPublicAdminPage) {
       return redirectTo("/admin/login");
     }
@@ -109,23 +143,23 @@ export async function middleware(request: NextRequest) {
     return response;
   }
 
-  // Hospital dashboard — separate from both staff admin and patient
-  // accounts. Hospitals sign in via /hospital/login (email/password only,
-  // provisioned by an admin invite, see supabase/hospitals.sql). Same
-  // reasoning as /admin above: confirm this user actually owns a
-  // `hospitals` row, not just that they're signed in as someone.
-  if (pathnameWithoutLocale.startsWith("/hospital")) {
+  // Hospital dashboard — separate from both staff admin and patient accounts.
+  if (isHospitalRoute) {
     const isHospitalLoginPage = pathnameWithoutLocale === "/hospital/login";
     if (!user && !isHospitalLoginPage) {
       return redirectTo("/hospital/login");
     }
     if (user && supabase) {
       try {
-        const { data: hospital } = await supabase.from("hospitals").select("user_id").eq("user_id", user.id).maybeSingle();
-        if (!hospital && !isHospitalLoginPage) {
+        const role = user.user_metadata?.role;
+        const isHospital = role === "hospital" || (
+          await supabase.from("hospitals").select("user_id").eq("user_id", user.id).maybeSingle()
+        ).data != null;
+
+        if (!isHospital && !isHospitalLoginPage) {
           return redirectTo("/hospital/login");
         }
-        if (hospital && isHospitalLoginPage) {
+        if (isHospital && isHospitalLoginPage) {
           return redirectTo("/hospital");
         }
       } catch (err) {
@@ -136,26 +170,22 @@ export async function middleware(request: NextRequest) {
   }
 
   // Provider dashboard — separate from admin/hospital/patient accounts.
-  // Providers sign in via /provider/login (email/password only,
-  // provisioned by a hospital invite, see supabase/hospitals.sql). Same
-  // reasoning as /admin above: confirm this user actually owns a
-  // `provider_profiles` row, not just that they're signed in as someone.
-  if (pathnameWithoutLocale.startsWith("/provider")) {
+  if (isProviderRoute) {
     const isProviderLoginPage = pathnameWithoutLocale === "/provider/login";
     if (!user && !isProviderLoginPage) {
       return redirectTo("/provider/login");
     }
     if (user && supabase) {
       try {
-        const { data: provider } = await supabase
-          .from("provider_profiles")
-          .select("provider_user_id")
-          .eq("provider_user_id", user.id)
-          .maybeSingle();
-        if (!provider && !isProviderLoginPage) {
+        const role = user.user_metadata?.role;
+        const isProvider = role === "provider" || (
+          await supabase.from("provider_profiles").select("provider_user_id").eq("provider_user_id", user.id).maybeSingle()
+        ).data != null;
+
+        if (!isProvider && !isProviderLoginPage) {
           return redirectTo("/provider/login");
         }
-        if (provider && isProviderLoginPage) {
+        if (isProvider && isProviderLoginPage) {
           return redirectTo("/provider");
         }
       } catch (err) {
@@ -166,10 +196,10 @@ export async function middleware(request: NextRequest) {
   }
 
   // Visitor accounts (dashboard + sign-in/up).
-  if (pathnameWithoutLocale.startsWith("/dashboard") && !user) {
+  if (isPatientRoute && !user) {
     return redirectTo("/signin");
   }
-  if ((pathnameWithoutLocale === "/signin" || pathnameWithoutLocale === "/signup" || pathnameWithoutLocale === "/access") && user) {
+  if (isAuthPage && user) {
     return redirectTo("/dashboard");
   }
 

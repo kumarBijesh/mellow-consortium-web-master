@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, getCurrentUser } from "@/lib/supabase/server";
 import MessageThread from "@/components/messaging/MessageThread";
 
 export const dynamic = "force-dynamic";
@@ -9,9 +9,7 @@ export const dynamic = "force-dynamic";
 export default async function PatientMessageThreadPage({ params }: { params: { id: string } }) {
   const t = await getTranslations("PatientDashboard.pages.messageThread");
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
 
   const { data: connection } = await supabase
     .from("patient_provider_connections")
